@@ -1,30 +1,22 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  
   <router-view/>
 </template>
-
-<style>
+<style >
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  height: 100vh !important;
+width: 100vw !important;
+  margin: 0 !important;
+  padding: 10px;
+font-family: 'Bebas Neue', cursive;
+font-family: 'PT Serif', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  background: rgb(32, 5, 95);
 }
 
-#nav {
-  padding: 30px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Serif&display=swap');
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>

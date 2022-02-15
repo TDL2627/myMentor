@@ -1,21 +1,27 @@
 <template>
+
+<div id="intro">
+<img  class="home-p" src="../assets/mentlogo.png" alt="">
+
   <div id="nav">
 <div class="nav-piece">
    <router-link to="/mentors">Mentors</router-link>
 </div>
 <div class="nav-piece">
-   <router-link to="/mentors">Time Table</router-link>
+   <router-link to="/times">Time Table</router-link>
 </div>
 <div class="nav-piece">
-   <router-link to="/mentors">Shuttle Times</router-link>
+   <router-link to="/shuttle">Shuttle Times</router-link>
 </div>
 <div class="nav-piece">
-   <router-link to="/mentors">Advice</router-link>
+   <router-link to="/advice">Advice</router-link>
 </div>
 
 
     </div>
 
+
+</div>
 
 
     
@@ -34,7 +40,7 @@ export default {
   width: 100%;
   height: 50px;
   padding: 15px;
-  margin-top: 30px;
+  margin-top: 20px;
   border-radius: 25px;
   background-color: azure;
  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -48,7 +54,7 @@ a{
 }
 #nav {
 color: #2c3e50;
-padding-top: 60%;
+
 }
 
 #nav a {

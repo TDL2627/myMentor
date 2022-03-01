@@ -6,7 +6,7 @@
   
  <!-- <img src="@/assets/pp.png" alt="pp"> -->
   
-    <a href="https://wa.me/+27818373613" target="_blank"><img src="@/assets/chat.png" alt=""></a>
+    <a href="https://wa.me/+278837363" target="_blank"><img src="@/assets/chat.png" alt=""></a>
    
 
   </div>

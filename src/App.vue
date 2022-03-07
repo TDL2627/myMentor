@@ -24,7 +24,7 @@ font-family: 'PT Serif', serif;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background: rgb(32, 5, 95);
+  background: rgb(17, 20, 64);
 }
 h1{
   color: white

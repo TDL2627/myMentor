@@ -1,6 +1,8 @@
 <template>
   <div class="footer">
-      TDL2627
+      <p>2021</p>
+      <p>© Kannemeyer</p>
+   <p class="tdl">TDL2627</p>
   </div>
 </template>
 
@@ -18,5 +20,10 @@ export default {
     width: 100%;
     background-color: rgb(63, 72, 204);
     color: white;
+}
+.tdl{
+    position: fixed;
+    bottom: 10px;
+    right: 30px;
 }
 </style>

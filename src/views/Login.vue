@@ -1,6 +1,6 @@
 <template>
 <div class="login">
-  <h1 class="heading">Login</h1>
+  <h1 class="heading">LOGIN</h1>
   <form>
       <h3>EMAIL</h3>
 <input class="putting" placeholder="Type here..." type="text">

@@ -32,6 +32,10 @@ font-family: 'PT Serif', serif;
 h1{
   color: white
 }
+.heading{
+   color: rgb(52, 152, 235);
+   text-decoration: underline;
+}
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=PT+Serif&display=swap');
 
 </style>

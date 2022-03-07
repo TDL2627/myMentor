@@ -12,6 +12,9 @@ export default {
 }
 </script>
 <style >
+*{
+  font-family: 'Oswald', sans-serif;
+}
 #app {
   height: 100vh !important;
 width: 100vw !important;

@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    
-  <!-- <Intro/> -->
+
+<h1 class="huge-head">myMentor</h1>
+<router-link to="/login">LOGIN</router-link>
+<router-link to="/register">REGISTER</router-link>
   </div>
 </template>
 
@@ -16,3 +18,11 @@ export default {
   }
 }
 </script>
+<style scoped>
+.home{
+  padding-top:10%;
+}
+.huge-head{
+  font-size: 150px;
+}
+</style>

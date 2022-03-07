@@ -2,7 +2,7 @@
 <div class="login">
   <h1 class="heading">Login</h1>
   <form>
-      <h3>NAME</h3>
+      <h3>EMAIL</h3>
 <input class="putting" placeholder="Type here..." type="text">
  <h3>PASSWORD</h3>
 <input class="putting" placeholder="Type here..." type="password">

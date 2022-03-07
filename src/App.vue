@@ -17,10 +17,10 @@ export default {
 }
 #app {
   height: 100vh !important;
-width: 100vw !important;
+width: 100% !important;
 overflow: none !important;
   margin: 0 !important;
-  padding: 10px;
+ 
 font-family: 'Bebas Neue', cursive;
 font-family: 'PT Serif', serif;
   -webkit-font-smoothing: antialiased;

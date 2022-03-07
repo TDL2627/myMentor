@@ -16,7 +16,12 @@
 <div class="nav-piece">
    <router-link to="/advice">Advice</router-link>
 </div>
-
+<div class="nav-piece">
+   <router-link to="/notepad">Note Pad</router-link>
+</div>
+<div class="nav-piece">
+   <router-link to="/feedback">Feed Back</router-link>
+</div>
 
     </div>
 

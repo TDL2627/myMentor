@@ -1,5 +1,6 @@
 <template>
-  <h1>Mentors</h1>
+<div class="mentors">
+ <h1 class="heading">Mentors</h1>
   <div class="mentor">
     <h3 class="name">Zainunesa Magmoed</h3>
 
@@ -10,6 +11,8 @@
    
 
   </div>
+</div>
+ 
 
 </template>
 
@@ -20,6 +23,9 @@ export default {
 </script>
 
 <style scoped>
+.mentors{
+  padding-top: 7%;
+}
 .name{
       margin: 25px;
 }

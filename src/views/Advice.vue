@@ -1,5 +1,6 @@
 <template>
 <div class="advice">
+<Nav/>
 <h1 class="heading">GENERAL INFORMATION</h1>
 
 <div class="container">
@@ -26,8 +27,11 @@
 </template>
 
 <script>
+import Nav from "../components/Navbar.vue"
 export default {
-
+components:{
+  Nav
+}
 }
 </script>
 

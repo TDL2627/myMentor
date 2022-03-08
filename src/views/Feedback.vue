@@ -1,5 +1,38 @@
 <template>
-  <h1>Feed Back</h1>
+<div class="feedback">
+  <h1 class="heading">Feed Back</h1>
+
+  <br><br>
+<form>
+<h3>How are you feeling?</h3>
+
+<select name="feels" id="feels">
+  <option  value="very sad">Very sad😞</option>
+  <option  value="sad">Sad🙁</option>
+  <option  value="average">Normal😐</option>
+  <option  value="happy">Happy🙂</option>
+  <option  value="very happy">Very Happy😄</option>
+</select>
+<br> <br>
+<h3>Rate your past two week experience</h3>
+<select name="rate" id="rate">
+  <option class="emo-1" value="1">1</option>
+  <option class="emo-2" value="2">2</option>
+  <option class="emo-3" value="3">3</option>
+  <option class="emo-4" value="4">4</option>
+  <option class="emo-5" value="5">5</option>
+</select>
+<br> <br>
+<h3>Have you been having any issues? (Academic or Personal)</h3>
+<textarea name="issues" id="issue" cols="50" rows="1"></textarea>
+<br><br>
+<h3>Is there anything you'd like to ask or say?</h3>
+<textarea name="issues" id="issue" cols="50" rows="1"></textarea>
+<br><br>
+      <button class="butt" type="submit">SUBMIT</button>
+</form>
+
+</div>
 </template>
 
 <script>
@@ -8,6 +41,51 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.feedback{
+  padding-top: 2%;
+   height: max-content !important;
+    overflow-y: hidden !important;
+    background: rgb(17, 20, 64);
+    width: 100%;
+}
+h3{
+  color: white;
+}
+.emo-1{
+  background-color: rgb(97, 24, 24);
+}
+.emo-2{
+  background-color: red;
+}
+.emo-3{
+  background-color: yellow;
+}
+.emo-4{
+  background-color: yellowgreen;
+}
+.emo-5{
+  background-color: green;
+}
+#feels{
+  width: 200px;
+  padding-left: 4%;
+  background: white;
+}
+#rate{
+   width: 200px;
+  padding-left: 6%;
+  background: white;
+}
+.butt{
+    background: transparent;
+    border: 2px solid rgb(52, 152, 235);
+    color: rgb(52, 152, 235);
+    border-radius: 25px;
+    padding-left: 20px;
+    margin: 10px;
+    padding-right: 20px;
+}
+
 
 </style>

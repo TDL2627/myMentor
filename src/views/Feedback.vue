@@ -1,4 +1,5 @@
 <template>
+<Nav/>
 <div class="feedback">
   <h1 class="heading">Feed Back</h1>
 
@@ -36,14 +37,16 @@
 </template>
 
 <script>
+import Nav from "../components/Navbar.vue"
 export default {
-
+components:{Nav}
 }
 </script>
 
 <style scoped>
 .feedback{
-  padding-top: 2%;
+  padding-top: 5%;
+  padding-bottom: 5%;
    height: max-content !important;
     overflow-y: hidden !important;
     background: rgb(17, 20, 64);

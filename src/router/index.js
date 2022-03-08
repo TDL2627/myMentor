@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/Home.vue';
-import Shuttle from '../views/Shuttle.vue';
+
 
 const routes = [
   {
@@ -79,6 +79,38 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/Main.vue')
+  },
+  {
+    path: '/exam',
+    name: 'Exam',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/info/Exam.vue')
+  },
+  {
+    path: '/study',
+    name: 'Study',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/info/Study.vue')
+  },
+  {
+    path: '/mental',
+    name: 'Mental',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/info/Mental.vue')
+  },
+  {
+    path: '/time',
+    name: 'Time',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/info/TimeManagement.vue')
   }
 ]
 

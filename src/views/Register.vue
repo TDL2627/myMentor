@@ -13,7 +13,7 @@
 </div>
 <div class="col-lg-4">
    <label for="type">Choose a your position:</label>
-<select v-model="type" name="type" id="type">
+<select v-model="type" name="type" id="type" required>
   <option value="Mentee">Mentee</option>
   <option value="Mentor">Mentor</option>
 </select>
@@ -43,7 +43,17 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      name: "",
+      email: "",
+      contact: "",
+      password: "",
+      type:"",
+      subject:"",
+      avatar:""
+    };
+  },
 }
 </script>
 

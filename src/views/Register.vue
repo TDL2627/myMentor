@@ -1,38 +1,38 @@
 <template>
 <div class="register">
   <h1 class="heading">REGISTER</h1>
-  <form>
+  <form  @submit.prevent="register">
       <div class="container">
     <div class="row">
 <div class="col-lg-4">
 <label for="subject">Choose a your field: </label>
-<select name="subject" id="subject">
+<select required v-model="subject" name="subject" id="subject">
   <option value="Nautical Science">Nautical Science</option>
   <option value="Engineering">Engineering</option>
 </select>
 </div>
 <div class="col-lg-4">
    <label for="type">Choose a your position:</label>
-<select name="type" id="type">
+<select v-model="type" name="type" id="type">
   <option value="Mentee">Mentee</option>
   <option value="Mentor">Mentor</option>
 </select>
 </div>
 <div class="col-lg-4">
 <label for="image">Upload Profile Photo</label>
-<input id="image" placeholder="Not required..." type="file">
+<input  id="image" placeholder="Not required..." type="file">
 </div>
 
     </div>
 </div>
  <h3>NAME</h3>
-<input class="putting" placeholder="Type here..." type="text">
+<input v-model="name" class="putting" placeholder="Type here..." type="text" required>
  <h3>NUMBER</h3>
-<input class="putting" placeholder="Type here..." type="number">
+<input v-model="contact" class="putting" placeholder="Type here..." type="number" required>
  <h3>EMAIL</h3>
-<input class="putting" placeholder="Type here..." type="email">
+<input v-model="email" class="putting" placeholder="Type here..." type="email">
  <h3>PASSWORD</h3>
-<input class="putting" placeholder="Type here..." type="password">
+<input v-model="password" class="putting" placeholder="Type here..." type="password">
 <br><br>
       <button class="butt" type="submit">SUBMIT</button>
   </form>

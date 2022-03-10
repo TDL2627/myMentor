@@ -12,6 +12,7 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
   <div class="row">
     <div class="col-lg-6" v-for="timmy in time" :key="timmy.title">
      <h3>{{timmy.title}}</h3>
+     <p>{{timmy.details}}</p>
     </div>
     <div class="col-lg-6"  v-for="timmy in time" :key="timmy.title">
        <img class="piks" :src="require('@/assets/'+ timmy.pic)">
@@ -42,6 +43,9 @@ data(){
 </script>
 
 <style scoped>
+h3{
+  color:white;
+}
 .timing{
   padding-top: 7%;
 }

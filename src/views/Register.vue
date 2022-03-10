@@ -5,21 +5,15 @@
   <form  @submit.prevent="register">
       <div class="container">
     <div class="row">
-<div class="col-lg-4">
+<div class="col-lg-6">
 <label for="subject">Choose a your field: </label>
 <select required v-model="subject" name="subject" id="subject">
   <option value="Nautical Science">Nautical Science</option>
   <option value="Engineering">Engineering</option>
 </select>
 </div>
-<div class="col-lg-4">
-   <label for="type">Choose a your position:</label>
-<select v-model="type" name="type" id="type" required>
-  <option value="Mentee">Mentee</option>
-  <option value="Mentor">Mentor</option>
-</select>
-</div>
-<div class="col-lg-4">
+
+<div class="col-lg-6">
 <label for="image">Upload Profile Photo</label>
 <input  id="image" placeholder="Not required..." type="file">
 </div>
@@ -50,21 +44,19 @@ export default {
       email: "",
       contact: "",
       password: "",
-      type:"",
       subject:"",
       avatar:""
     };
   },
    methods: {
     register() {
-         fetch('http://localhost:2627/students', {
+         fetch('https://mymentor-server.herokuapp.com/students', {
   method: 'POST',
   body: JSON.stringify({
     email:this.email,
     password:this.password,
     name:this.name,
     contact:this.contact,
-    type:this.type,
     subject:this.subject,
     avatar:this.avatar
   }),

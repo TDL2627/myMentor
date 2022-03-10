@@ -4,10 +4,13 @@
   <h1 class="heading">Feed Back</h1>
 
   <br><br>
-<form>
+<form @submit.prevent="feedBack">
+  <h3>Enter your name</h3>
+  <input v-model="name" type="text" required>
+
 <h3>How are you feeling?</h3>
 
-<select name="feels" id="feels">
+<select v-model="feels" name="feels" id="feels">
   <option  value="very sad">Very sad😞</option>
   <option  value="sad">Sad🙁</option>
   <option  value="average">Normal😐</option>
@@ -16,7 +19,7 @@
 </select>
 <br> <br>
 <h3>Rate your past two week experience</h3>
-<select name="rate" id="rate">
+<select v-model="exp" name="rate" id="rate">
   <option class="emo-1" value="1">1</option>
   <option class="emo-2" value="2">2</option>
   <option class="emo-3" value="3">3</option>
@@ -25,10 +28,10 @@
 </select>
 <br> <br>
 <h3>Have you been having any issues? (Academic or Personal)</h3>
-<textarea name="issues" id="issue" cols="50" rows="1"></textarea>
+<textarea v-model="issue" name="issues" id="issue" cols="50" rows="1"></textarea>
 <br><br>
 <h3>Is there anything you'd like to ask or say?</h3>
-<textarea name="issues" id="issue" cols="50" rows="1"></textarea>
+<textarea  v-model="say" name="say" id="say" cols="50" rows="1"></textarea>
 <br><br>
       <button class="butt" type="submit">SUBMIT</button>
 </form>
@@ -39,7 +42,46 @@
 <script>
 import Nav from "../components/Navbar.vue"
 export default {
-components:{Nav}
+components:{Nav},
+  data(){
+    return{
+  name:"",
+  feels:"",
+  exp:"",
+  say:"",
+  issue:""
+    }
+
+  },
+  methods:{
+    feedBack(){
+      fetch('https://mymentor-server.herokuapp.com/contact', {
+  method: 'POST',
+  body: JSON.stringify({
+    name: this.name,
+    feels: this.feels,
+    exp: this.exp,
+    say: this.say,
+    issue: this.issue
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+
+  .then((json) => {
+    console.log(json)
+    console.log(json.msg)
+    this.name = '',
+    this.feels = '',
+    this.exp = '',
+    this.say ='',
+    this.issue =''
+  });
+    }
+  }
+
 }
 </script>
 

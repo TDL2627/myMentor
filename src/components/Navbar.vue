@@ -1,7 +1,7 @@
 <template>
   <div class="navi">
    <router-link to="/main"><img class="nav-logo" src="@/assets/mentlogo.png" alt="logo"></router-link> 
-      <router-link  to="/profile">PROFILE</router-link>
+      <router-link class="account"  to="/profile">PROFILE</router-link>
       <router-link class="outtie" to="/">LOG OUT</router-link>
   </div>
 </template>
@@ -40,5 +40,15 @@ export default {
   background: white;
   border-radius: 50%;
   margin: 5px;
+}
+.account{
+  position: fixed;
+  top:5px;
+  background: white;
+  border-radius: 25px;
+  padding: 5px;
+  border: solid 1px rgb(63, 72, 204);
+  right:  120px;
+  text-decoration: none;
 }
 </style>

@@ -68,16 +68,12 @@ components:{Nav},
     'Content-type': 'application/json; charset=UTF-8',
   },
 })
-  .then((response) => response.json())
+
 
   .then((json) => {
     console.log(json)
     console.log(json.msg)
-    this.name = '',
-    this.feels = '',
-    this.exp = '',
-    this.say ='',
-    this.issue =''
+    alert("Feed Back Sent")
   });
     }
   }

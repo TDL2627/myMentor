@@ -54,6 +54,7 @@ components:{Nav},
 
   },
   methods:{
+     
     feedBack(){
       fetch('https://mymentor-server.herokuapp.com/contact', {
   method: 'POST',

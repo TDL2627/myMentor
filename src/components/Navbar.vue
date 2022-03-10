@@ -1,6 +1,7 @@
 <template>
   <div class="navi">
    <router-link to="/main"><img class="nav-logo" src="@/assets/mentlogo.png" alt="logo"></router-link> 
+      <router-link  to="/profile">PROFILE</router-link>
       <router-link class="outtie" to="/">LOG OUT</router-link>
   </div>
 </template>

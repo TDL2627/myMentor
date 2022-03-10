@@ -1,6 +1,7 @@
 <template>
 <div class="register">
   <h1 class="heading">REGISTER</h1>
+<h1>{{msg}}</h1>
   <form  @submit.prevent="register">
       <div class="container">
     <div class="row">
@@ -54,7 +55,34 @@ export default {
       avatar:""
     };
   },
-}
+   methods: {
+    register() {
+         fetch('http://localhost:2627/students', {
+  method: 'POST',
+  body: JSON.stringify({
+    email:this.email,
+    password:this.password,
+    name:this.name,
+    contact:this.contact,
+    type:this.type,
+    subject:this.subject,
+    avatar:this.avatar
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+  .then((response) => response.json())
+  .then((json) => {
+        this.msg = `${ this.name }  Registered Successfuly`;
+         alert("Logging in...");
+            this.$router.push({ name: "Main" });
+
+  });
+    },
+  },
+};
+
 </script>
 
 <style scoped>

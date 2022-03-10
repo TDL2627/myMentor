@@ -1,11 +1,11 @@
 <template>
 <div class="login">
   <h1 class="heading">LOGIN</h1>
-  <form>
+  <form @submit.prevent="login">
       <h3>EMAIL</h3>
-<input class="putting" placeholder="Type here..." type="text">
+<input class="putting"  v-model="email"  placeholder="Type here..." type="text">
  <h3>PASSWORD</h3>
-<input class="putting" placeholder="Type here..." type="password">
+<input class="putting"    v-model="password" placeholder="Type here..." type="password">
 <br><br>
       <button class="butt" type="submit">SUBMIT</button>
   </form>
@@ -16,8 +16,39 @@
 
 <script>
 export default {
-
-}
+  data() {
+    return {
+      name:"",
+      email: "",
+      password: "",
+      msg:""
+      
+    };
+},
+ methods: {
+    login() {
+      fetch("https://mymentor-server.herokuapp.com/students", {
+        method: "PATCH",
+        body: JSON.stringify({
+          email: this.email,
+          password: this.password,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          localStorage.setItem("jwt", json.jwt);
+          alert("Logging in...");
+          this.$router.push({ name: "Main" });
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    },
+  },
+};
 </script>
 
 <style scoped>

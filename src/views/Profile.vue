@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
       <h1 class="heading">Profile</h1>
-<!-- <p>{{students.name}}</p> -->
+
   </div>
 </template>
 

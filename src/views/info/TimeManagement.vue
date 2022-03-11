@@ -34,7 +34,7 @@ data(){
   }
 },
  created(){
-    fetch('http://localhost:2627/info/time')
+    fetch('https://mymentor-server.herokuapp.com/info/time')
     .then((res) => res.json())
     .then(data => this.time = data )
     .catch(err => console.log(err.message))

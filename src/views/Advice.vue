@@ -6,18 +6,18 @@
 <div class="container">
   <div class="row">
  <div class="col-lg-6">
-   <router-link class="tabby" to="/time">TIME MANAGEMENT</router-link>
+   <router-link class="tabby" to="/advice/time">TIME MANAGEMENT</router-link>
  </div>
  <div class="col-lg-6">
-   <router-link class="tabby" to="/study">STUDY GUIDE</router-link>
+   <router-link class="tabby" to="/advice/study">STUDY GUIDE</router-link>
  </div>
   </div>
   <div class="row">
     <div class="col-lg-6">
-   <router-link class="tabby" to="/mental">MENTAL HELP</router-link>
+   <router-link class="tabby" to="/advice/mental">MENTAL HELP</router-link>
  </div>
  <div class="col-lg-6">
-   <router-link class="tabby" to="/exam">EXAM PREP</router-link>
+   <router-link class="tabby" to="/advice/exam">EXAM PREP</router-link>
  </div>
 
   </div>

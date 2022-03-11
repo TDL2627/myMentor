@@ -13,7 +13,7 @@ export default {
       logout() {
         localStorage.removeItem('jwtToken')
         this.$router.push({
-          name: 'Login'
+          name: 'Home'
         })
       }
     }

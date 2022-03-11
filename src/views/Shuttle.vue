@@ -4,8 +4,8 @@
 <h1 class="heading">SHUTTLE TIMES</h1>
 <table>
   <tr>
-    <th>Company</th>
-    <th>Contact</th>
+    <th>ROUTES</th>
+    <th>SHUTTLE TIMES</th>
  
   </tr>
   <tr>

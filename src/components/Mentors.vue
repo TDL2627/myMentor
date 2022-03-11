@@ -1,15 +1,11 @@
 <template>
 <div class="mentors">
  <h1 class="heading">Mentors</h1>
-  <div class="mentor">
-    <h3 class="name">Zainunesa Magmoed</h3>
-
-  
- <!-- <img src="@/assets/pp.png" alt="pp"> -->
-  
-    <a href="https://wa.me/+278837363" target="_blank"><img src="@/assets/chat.png" alt=""></a>
-   
-
+  <div class="mentor"  v-for="mentor in mentors" :key="mentor.name">
+     <img class="piks" :src="require('@/assets/'+ mentor.pic)">
+    <h3 class="name">{{mentor.name}}</h3>
+    <p>{{mentor.email}}</p>
+     <div class="div" v-html="mentor.number"></div>
   </div>
 </div>
  
@@ -18,7 +14,17 @@
 
 <script>
 export default {
-
+data(){
+  return{
+    mentors:[]
+  }
+},
+ created(){
+    fetch('http://localhost:2627/mentors')
+    .then((res) => res.json())
+    .then(data => this.mentors = data )
+    .catch(err => console.log(err.message))
+  }
 }
 </script>
 
@@ -31,14 +37,15 @@ export default {
 }
 .mentor{
     border: solid 2px black;
-    display: flex;
+   
 }
 img{
     height: 50px;
     margin: 20px;
 }
-h3{
-    color: aquamarine;
+h3,p{
+    color: white;
 }
+
 
 </style>

@@ -1,6 +1,7 @@
 <template>
   <div class="navi">
    <router-link to="/main"><img class="nav-logo" src="@/assets/mentlogo.png" alt="logo"></router-link> 
+   <router-link class="homie" to="/main">HOME</router-link>
       <router-link class="account"  to="/profile">PROFILE</router-link>
       <router-link class="outtie" to="/">LOG OUT</router-link>
   </div>
@@ -50,5 +51,13 @@ export default {
   border: solid 1px rgb(63, 72, 204);
   right:  120px;
   text-decoration: none;
+}
+.homie{
+  text-decoration: none;
+  color: white;
+   position: fixed;
+    top: 0px;
+    padding: 10px;
+    left: 70px;
 }
 </style>

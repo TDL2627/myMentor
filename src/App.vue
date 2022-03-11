@@ -10,6 +10,7 @@ export default {
   components: {
     Footer,Nav
   }
+  
 }
 </script>
 <style >

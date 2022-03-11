@@ -3,13 +3,20 @@
    <router-link to="/main"><img class="nav-logo" src="@/assets/mentlogo.png" alt="logo"></router-link> 
    <router-link class="homie" to="/main">HOME</router-link>
       <router-link class="account"  to="/profile">PROFILE</router-link>
-      <router-link class="outtie" to="/">LOG OUT</router-link>
+      <button class="outtie" @click="logout()">LOG OUT</button>
   </div>
 </template>
 
 <script>
 export default {
-
+ methods: {
+      logout() {
+        localStorage.removeItem('jwtToken')
+        this.$router.push({
+          name: 'Login'
+        })
+      }
+    }
 }
 </script>
 

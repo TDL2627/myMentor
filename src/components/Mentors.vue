@@ -20,7 +20,7 @@ data(){
   }
 },
  created(){
-    fetch('http://localhost:2627/mentors')
+    fetch('https://mymentor-server.herokuapp.com/mentors')
     .then((res) => res.json())
     .then(data => this.mentors = data )
     .catch(err => console.log(err.message))
@@ -37,10 +37,10 @@ data(){
 }
 .mentor{
     border: solid 2px black;
-   
+   padding: 20px;
 }
 img{
-    height: 50px;
+    height: 100px;
     margin: 20px;
 }
 h3,p{

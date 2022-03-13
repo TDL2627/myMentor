@@ -2,6 +2,7 @@
 <div class="times">
   <Nav/>
   <h1 class="heading">TIME TABLE</h1>
+  <img src="@/assets/0.png" class="img-fluid" alt="img">
 </div>
 </template>
 
@@ -17,5 +18,6 @@ components:{
 <style scoped>
 .times{
   padding-top: 7%;
+  padding-bottom:7%
 }
 </style>

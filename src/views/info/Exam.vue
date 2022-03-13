@@ -30,12 +30,17 @@ data(){
     exam:[]
   }
 },
- created(){
-    fetch('https://mymentor-server.herokuapp.com/info/mental')
-    .then((res) => res.json())
-    .then(data => this.exam = data )
-    .catch(err => console.log(err.message))
-  },
+async created () {
+    this.loading = true
+    try {
+      const res = await fetch('https://mymentor-server.herokuapp.com/info/exam')
+      this.exam = await res.json()
+      this.loading = false
+    } catch (error) {
+      console.log(error)
+      this.loading = false
+    }
+  }
 }
 </script>
 

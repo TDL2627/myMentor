@@ -93,16 +93,20 @@ p{
     padding-right: 20px;
 }
 
+/* loader */
 
 .half-circle-spinner, .half-circle-spinner * {
       box-sizing: border-box;
     }
 
     .half-circle-spinner {
+      z-index: 2627;
       width: 60px;
       height: 60px;
       border-radius: 100%;
-      position: relative;
+      position: fixed;
+      top:45%;
+      left: 40%;
     }
 
     .half-circle-spinner .circle {

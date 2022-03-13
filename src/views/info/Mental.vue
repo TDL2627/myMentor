@@ -71,7 +71,9 @@ async created () {
       width: 60px;
       height: 60px;
       border-radius: 100%;
-      position: relative;
+     position: fixed;
+      top:45%;
+      left: 50%;
     }
 
     .half-circle-spinner .circle {

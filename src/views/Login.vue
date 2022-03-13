@@ -1,5 +1,11 @@
 <template>
 <div class="login">
+   <div v-if="loading" >
+ <div class="half-circle-spinner">
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+</div>
+</div>
   <h1 class="heading">LOGIN</h1>
   <form @submit.prevent="login">
       <h3>EMAIL</h3>
@@ -21,13 +27,17 @@ export default {
       name:"",
       email: "",
       password: "",
-      msg:""
+      msg:"",
+      loading:false
       
     };
 },
  methods: {
-    login() {
-      fetch("https://mymentor-server.herokuapp.com/students", {
+
+ async login() {
+this.loading = true
+try{
+ fetch("https://mymentor-server.herokuapp.com/students", {
         method: "PATCH",
         body: JSON.stringify({
           email: this.email,
@@ -40,14 +50,18 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           localStorage.setItem("jwt", json.jwt);
-          alert("Logging in...");
+          this.loading = false
           this.$router.push({ name: "Main" });
+
         })
-        .catch((err) => {
+}
+     
+        catch(err)  {
           alert(err);
-        });
-    },
-  },
+          this.loading = false
+        }
+    }
+  }
 };
 </script>
 
@@ -78,4 +92,45 @@ p{
     margin: 10px;
     padding-right: 20px;
 }
+
+
+.half-circle-spinner, .half-circle-spinner * {
+      box-sizing: border-box;
+    }
+
+    .half-circle-spinner {
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+      position: relative;
+    }
+
+    .half-circle-spinner .circle {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      border: calc(60px / 10) solid transparent;
+    }
+
+    .half-circle-spinner .circle.circle-1 {
+      border-top-color: white;
+      animation: half-circle-spinner-animation 1s infinite;
+    }
+
+    .half-circle-spinner .circle.circle-2 {
+      border-bottom-color: #1d92ff;
+      animation: half-circle-spinner-animation 1s infinite alternate;
+    }
+
+    @keyframes half-circle-spinner-animation {
+      0% {
+        transform: rotate(0deg);
+
+      }
+      100%{
+        transform: rotate(360deg);
+      }
+    }
 </style>

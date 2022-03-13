@@ -105,8 +105,8 @@ p{
       height: 60px;
       border-radius: 100%;
       position: fixed;
-      top:45%;
-      left: 40%;
+      bottom:20%;
+      left: 46%;
     }
 
     .half-circle-spinner .circle {

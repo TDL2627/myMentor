@@ -8,10 +8,19 @@
   <div class="circle circle-2"></div>
 </div>
 </div>
-<div class="notez" v-for="note in notes" :key="note.title">
+
+<div class="container">
+  <div class="row">
+<div class="notez col-lg-6" v-for="note in notes" :key="note.title">
 <h3>{{note.title}}</h3>
 <p>{{note.body}}</p>
+<button class="btn btn-danger">DELETE</button>
+<button class="btn btn-primary">EDIT</button>
 </div>
+  </div>
+</div>
+
+
 
 </div>
 </template>
@@ -42,6 +51,7 @@ data(){
         .then((response) => response.json())
         .then((json) => {
           this.notes = json;
+          this.loading = false
           this.notes.forEach(async (note) => {
             await fetch(
               "https://mymentor-server.herokuapp.com/note" + note.author,
@@ -76,6 +86,30 @@ data(){
 <style scoped>
 .notepad{
   padding-top: 7%;
+  padding-bottom: 7%;
+   height: max-content !important;
+    overflow-y: hidden !important;
+    background: rgb(17, 20, 64);
+}
+button{
+  margin:5%;
+}
+.notez{
+  border: 2px solid black;
+  width: 40%;
+  margin: 5%;
+  background: #d2e951;
+  height: 200px;
+}
+p{
+  color: #000;
+    overflow-y: scroll;
+  text-align: start !important;
+
+}
+h3{
+  color: black;
+  text-decoration: underline black;
 }
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {

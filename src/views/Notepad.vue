@@ -8,7 +8,40 @@
   <div class="circle circle-2"></div>
 </div>
 </div>
+<a class="nav-link" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Add a product
+</a>
 
+<!-- Modal for add  product -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Note</h5>
+        
+        <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+       <form @submit.prevent="createNote">
+        <ul>
+          <li>TITLE</li>
+          <li> <input v-model="title" required type="text"></li>
+          <li>BODY</li>
+          <li> <input v-model="body" required type="text"></li>
+       </ul>
+
+       
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-success">Save changes</button>
+        </div>
+       </form>
+      </div>
+     
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row">
 <div class="notez col-lg-6" v-for="note in notes" :key="note.title">
@@ -34,6 +67,8 @@ components:{
 data(){
   return{
     notes:null,
+    title:"",
+    body:"",
     loading:false
   }
 },
@@ -79,7 +114,37 @@ data(){
       this.$router.push({ name: "Login" });
     }
     
-  }
+  },
+   methods: {
+    //  create
+    createNote() {
+      if (!localStorage.getNote("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      }
+      fetch("https://mymentor-server.herokuapp.com/note", {
+        method: "POST",
+        body: JSON.stringify({
+          title: this.title,
+          body: this.body
+    
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      })
+        .then((response) => response.json())
+
+        .then((json) => {
+          alert("Note added  (REFRESH TO SEE ITEM)");
+          this.$router.push({ name: "Notepad" });
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    }
+   }
 }
 </script>
 
@@ -100,6 +165,9 @@ button{
   margin: 5%;
   background: #d2e951;
   height: 200px;
+}
+ul{
+  list-style: none;
 }
 p{
   color: #000;

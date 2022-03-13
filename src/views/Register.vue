@@ -8,19 +8,15 @@
 </div>
   <h1 class="heading">REGISTER</h1>
   <form  @submit.prevent="register">
-      <div class="container">
-    <div class="row">
-<div class="col-lg-12">
-<label for="subject">Choose a your field: </label>
+ 
+<h3>WHAT IS YOUR QUALIFICATION</h3>
 <select required v-model="subject" name="subject" id="subject">
   <option value="Nautical Science">Nautical Science</option>
   <option value="Engineering">Engineering</option>
 </select>
-</div>
 
 
-    </div>
-</div>
+
  <h3>NAME</h3>
 <input v-model="name" class="putting" placeholder="Type here..." type="text" required>
  <h3>NUMBER</h3>

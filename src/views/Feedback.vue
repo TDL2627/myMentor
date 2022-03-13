@@ -16,7 +16,7 @@
 
 <h3>How are you feeling?</h3>
 
-<select v-model="feels" name="feels" id="feels">
+<select v-model="feels" name="feels" required id="feels">
   <option  value="very sad">Very sad😞</option>
   <option  value="sad">Sad🙁</option>
   <option  value="average">Normal😐</option>
@@ -25,7 +25,7 @@
 </select>
 <br> <br>
 <h3>Rate your past two week experience</h3>
-<select v-model="exp" name="rate" id="rate">
+<select v-model="exp" name="rate" required id="rate">
   <option class="emo-1" value="1">1</option>
   <option class="emo-2" value="2">2</option>
   <option class="emo-3" value="3">3</option>
@@ -34,10 +34,10 @@
 </select>
 <br> <br>
 <h3>Have you been having any issues? (Academic or Personal)</h3>
-<textarea v-model="issue" name="issues" id="issue" cols="50" rows="1"></textarea>
+<textarea v-model="issue" name="issues" id="issue" cols="50" required rows="1"></textarea>
 <br><br>
 <h3>Is there anything you'd like to ask or say?</h3>
-<textarea  v-model="say" name="say" id="say" cols="50" rows="1"></textarea>
+<textarea  v-model="say" name="say" id="say" cols="50" rows="1" required></textarea>
 <br><br>
       <button class="butt" type="submit">SUBMIT</button>
 </form>
@@ -82,7 +82,13 @@ components:{Nav},
 
   .then((json) => {
      this.loading = false
+
     alert("Feed Back Sent")
+    this.name="";
+     this.feels="";
+     this.exp="";
+     this.say="";
+     this.issue="";
   });
     }
   catch(err)  {

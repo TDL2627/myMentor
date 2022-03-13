@@ -15,14 +15,15 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-lg-6" v-for="timmy in time" :key="timmy.title">
+  <div class="row"  v-for="timmy in time" :key="timmy.title">
+    <div class="col-lg-6">
      <h3>{{timmy.title}}</h3>
      <p>{{timmy.details}}</p>
     </div>
-    <div class="col-lg-6"  v-for="timmy in time" :key="timmy.title">
+    <div class="col-lg-6" >
        <img class="piks" :src="require('@/assets/'+ timmy.pic)">
     </div>
+    <hr>
   </div>
 </div>
 </div>
@@ -58,16 +59,28 @@ async created () {
 
 <style scoped>
 
-h3{
+h3,p{
   color:white;
 }
+hr{
+  color: white;
+  margin: 10px;
+  
+}
 .timing{
+   height: max-content !important;
+    overflow-y: hidden !important;
+    background: rgb(17, 20, 64);
   padding-top: 7%;
+  padding-bottom: 7%;
 }
 .backie{
   position: fixed;
   right: 50px;
   top: 100px;
+}
+.row{
+  margin-top: 5%;
 }
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {

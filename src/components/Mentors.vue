@@ -13,6 +13,7 @@
   <div class="col-lg-5 mentor"  v-for="mentor in mentors" :key="mentor.name">
      <img class="piks" :src="require('@/assets/'+ mentor.pic)">
     <h3 class="name">{{mentor.name}}</h3>
+    <h4>{{mentor.qualification}}</h4>
     <p>{{mentor.email}}</p>
      <div class="div" v-html="mentor.number"></div>
   </div>
@@ -69,7 +70,7 @@ img{
     height: 100px;
     margin: 20px;
 }
-h3,p{
+h3,p,h4{
     color: white;
 }
 /* loader */

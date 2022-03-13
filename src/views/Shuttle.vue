@@ -2,22 +2,24 @@
 <div class="shuttles">
   <Nav/>
 <h1 class="heading">SHUTTLE TIMES</h1>
+<div v-if="loading" >
+ <div class="half-circle-spinner">
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+</div>
+</div>
 <table>
   <tr>
     <th>ROUTES</th>
     <th>SHUTTLE TIMES</th>
  
   </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
+  <tr  v-for="froms in from" :key="froms.time">
+    <td>{{froms.path}}</td>
+    <td>{{froms.time}}</td>
  
   </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-  
-  </tr>
+ 
 </table>
 </div>
 </template>
@@ -27,7 +29,24 @@ import Nav from "../components/Navbar.vue"
 export default {
 components:{
   Nav
-}
+},
+data(){
+  return{
+    from:[],
+    loading:false
+  }
+},
+async created () {
+    this.loading = true
+    try {
+      const res = await fetch('https://mymentor-server.herokuapp.com/shuttle/from')
+      this.from = await res.json()
+      this.loading = false
+    } catch (error) {
+      console.log(error)
+      this.loading = false
+    }
+  }
 }
 </script>
 
@@ -35,13 +54,64 @@ components:{
 .shuttles{
   padding-top: 7%;
 }
-table,td,tr,th{
+table,tr{
   color: white;
   border: 1px solid white;
+}
+th{
+  color: white;
+  background: black;
+    border: 1px solid white;
+}
+td{
+    color: black;
+  background: white;
+    border: 1px solid black;
 }
 table{
   width: 95%;
   margin: 2%;
 }
+/* loader */
+.half-circle-spinner, .half-circle-spinner * {
+      box-sizing: border-box;
+    }
 
+    .half-circle-spinner {
+      width: 60px;
+      height: 60px;
+      border-radius: 100%;
+     position: fixed;
+      top:45%;
+      left: 50%;
+    }
+
+    .half-circle-spinner .circle {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      border: calc(60px / 10) solid transparent;
+    }
+
+    .half-circle-spinner .circle.circle-1 {
+      border-top-color: white;
+      animation: half-circle-spinner-animation 1s infinite;
+    }
+
+    .half-circle-spinner .circle.circle-2 {
+      border-bottom-color: #1d92ff;
+      animation: half-circle-spinner-animation 1s infinite alternate;
+    }
+
+    @keyframes half-circle-spinner-animation {
+      0% {
+        transform: rotate(0deg);
+
+      }
+      100%{
+        transform: rotate(360deg);
+      }
+    }
 </style>

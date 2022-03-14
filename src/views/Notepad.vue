@@ -23,7 +23,7 @@
       </div>
 
       <div class="modal-body">
-       <form @submit.prevent="createNote">
+       <form >
         <ul>
           <li>TITLE</li>
           <li> <input v-model="title" required type="text"></li>
@@ -34,7 +34,7 @@
        
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" class="btn btn-success">Save changes</button>
+          <button type="submit" v-on:click="createNote" class="btn btn-success">Save changes</button>
         </div>
        </form>
       </div>
@@ -47,7 +47,7 @@
 <div class="notez col-lg-6" v-for="note in notes" :key="note.title">
 <h3>{{note.title}}</h3>
 <p>{{note.body}}</p>
-<button class="btn btn-danger">DELETE</button>
+<button v-on:click="deleteNote(note._id)" class="btn  btn-danger" >DELETE</button>
 <button class="btn btn-primary">EDIT</button>
 </div>
   </div>
@@ -60,6 +60,7 @@
 
 <script>
 import Nav from "../components/Navbar.vue"
+import axios from "axios";
 export default {
 components:{
   Nav
@@ -72,6 +73,7 @@ data(){
     loading:false
   }
 },
+// fetching all
  mounted() {
     this.loading = true
     if (localStorage.getItem("jwt")) {
@@ -87,23 +89,7 @@ data(){
         .then((json) => {
           this.notes = json;
           this.loading = false
-          this.notes.forEach(async (note) => {
-            await fetch(
-              "https://mymentor-server.herokuapp.com/note" + note.author,
-              {
-                method: "GET",
-                headers: {
-                  "Content-type": "application/json; charset=UTF-8",
-                  Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-                },
-              }
-            )
-              .then((response) => response.json())
-              
-              .then((json) => {
-                note.author = json._id;
-              });
-          });
+         
         })
         .catch((err) => {
           alert("Not logged in");
@@ -116,8 +102,9 @@ data(){
     
   },
    methods: {
-    //  create
+    //  create a note
     createNote() {
+         this.loading = true
       if (!localStorage.getItem("jwt")) {
         alert("User not logged in");
         return this.$router.push({ name: "Login" });
@@ -135,16 +122,36 @@ data(){
         },
       })
         .then((response) => response.json())
-
+    
         .then((json) => {
-          alert("Note added  (REFRESH TO SEE ITEM)");
-          this.$router.push({ name: "Notepad" });
+          this.loading = false;
+          this.title="";
+          this.body="";
+          alert("Note added");
+          this.$router.go()
         })
         .catch((err) => {
           alert(err);
+          this.loading = false;
         });
+    },
+ deleteNote: function (id) {
+      if (localStorage.getItem("jwt")){
+        fetch('https://mymentor-server.herokuapp.com/note/'+ id ,{
+          method: 'DELETE',
+          headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+        })
+        .then(res => res.json())
+        .catch(error => console.error('Error:', error))
+        .then(response => console.log('Success:', response));
+        this.$router.push({ name: "Notepad" });
+          }
     }
    }
+  
 }
 </script>
 

@@ -9,10 +9,10 @@
 </div>
 </div>
 <a class="nav-link" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Add a product
+  Add a note
 </a>
 
-<!-- Modal for add  product -->
+<!-- Modal for add  note -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -28,10 +28,15 @@
           <li>TITLE</li>
           <li> <input v-model="title" required type="text"></li>
           <li>BODY</li>
-          <li> <input v-model="body" required type="text"></li>
+          <li><textarea v-model="body" required type="text" cols="30" rows="10"></textarea></li>
        </ul>
 
-       
+          <div v-if="loading" >
+ <div class="half-circle-spinner">
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+</div>
+</div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
           <button type="submit" v-on:click="createNote" class="btn btn-success">Save changes</button>
@@ -60,7 +65,6 @@
 
 <script>
 import Nav from "../components/Navbar.vue"
-import axios from "axios";
 export default {
 components:{
   Nav
@@ -135,6 +139,7 @@ data(){
           this.loading = false;
         });
     },
+    // delete
  deleteNote: function (id) {
       if (localStorage.getItem("jwt")){
         fetch('https://mymentor-server.herokuapp.com/note/'+ id ,{
@@ -147,7 +152,9 @@ data(){
         .then(res => res.json())
         .catch(error => console.error('Error:', error))
         .then(response => console.log('Success:', response));
-        this.$router.push({ name: "Notepad" });
+        alert("Note Deleted")
+         this.$router.go();
+        
           }
     }
    }
@@ -197,6 +204,7 @@ h3{
       border-radius: 100%;
      position: fixed;
       top:45%;
+      z-index: 252687654;
       left: 50%;
     }
 
@@ -205,17 +213,20 @@ h3{
       position: absolute;
       width: 100%;
       height: 100%;
+        z-index: 252687654;
       border-radius: 100%;
       border: calc(60px / 10) solid transparent;
     }
 
     .half-circle-spinner .circle.circle-1 {
       border-top-color: white;
+        z-index: 252687654;
       animation: half-circle-spinner-animation 1s infinite;
     }
 
     .half-circle-spinner .circle.circle-2 {
       border-bottom-color: #1d92ff;
+        z-index: 252687654;
       animation: half-circle-spinner-animation 1s infinite alternate;
     }
 

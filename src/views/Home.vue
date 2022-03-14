@@ -5,10 +5,10 @@
 
 <div class="container">
   <div class="row">
-<div class="col-lg-6">
+<div class="col-lg-6 col-sm-12">
 <router-link class="home-but" to="/login">LOGIN</router-link>
 </div>
-<div class="col-lg-6">
+<div class="col-lg-6 col-sm-12">
   <router-link class="home-but" to="/register">REGISTER</router-link>
 </div>
 
@@ -45,5 +45,16 @@ export default {
 }
 .container{
   padding-top: 10%;
+}
+@media only screen and (max-width: 600px) {
+.huge-head{
+  font-size: 50px;
+}
+.home-but{
+  border: solid 5px rgb(52, 152, 235);
+  text-decoration: none;
+ padding: 0;
+
+}
 }
 </style>

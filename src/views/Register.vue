@@ -131,7 +131,9 @@ label{
       width: 60px;
       height: 60px;
       border-radius: 100%;
-      position: relative;
+     position: fixed;
+      bottom:20%;
+      left: 46%;
     }
 
     .half-circle-spinner .circle {

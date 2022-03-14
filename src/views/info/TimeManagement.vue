@@ -62,10 +62,18 @@ async created () {
 h3,p{
   color:white;
 }
+h3{
+  text-decoration: underline;
+}
 hr{
   color: white;
   margin: 10px;
   
+}
+.piks{
+  height: 250px !important;
+  width: 400px !important;
+  object-fit: cover;
 }
 .timing{
    height: max-content !important;

@@ -15,14 +15,18 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-lg-6" v-for="exams in exam" :key="exams.title">
+  <div class="row"  v-for="exams in exam" :key="exams.title">
+    <div class="col-lg-6">
      <h3>{{exams.title}}</h3>
      <p>{{exams.details}}</p>
     </div>
-   
+    <div class="col-lg-6" >
+       <img class="piks" :src="require('@/assets/'+ exams.pic)">
+    </div>
+    <hr>
   </div>
 </div>
+
  </div>
 </template>
 
@@ -53,8 +57,24 @@ async created () {
 </script>
 
 <style scoped>
+h3{
+  color: white;
+  text-decoration: underline;
+}
+p{
+  color:white;
+}
 .exam{
+ height: max-content !important;
+    overflow-y: hidden !important;
+    background: rgb(17, 20, 64);
   padding-top: 7%;
+  padding-bottom: 7%;
+}
+.piks{
+  height: 250px !important;
+  width: 400px !important;
+   object-fit: cover;
 }
 .backie{
   position: fixed;

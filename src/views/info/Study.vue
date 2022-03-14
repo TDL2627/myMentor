@@ -15,16 +15,19 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-lg-6" v-for="studies in study" :key="studies.title">
-     <h3>{{studies.title}}</h3>
-     <p>{{studies.details}}</p>
+  <div class="row"  v-for="stud in study" :key="stud.title">
+    <div class="col-lg-6">
+     <h3>{{stud.title}}</h3>
+     <p>{{stud.details}}</p>
     </div>
-    <div class="col-lg-6"  v-for="studies in study" :key="studies.title">
-       <img class="piks" :src="require('@/assets/'+ studies.pic)">
+    <div class="col-lg-6" >
+       <img class="piks" :src="require('@/assets/'+ stud.pic)">
     </div>
+    <hr>
   </div>
 </div>
+
+
  </div>
 </template>
 
@@ -57,7 +60,23 @@ async created () {
 
 <style scoped>
 .study{
+ height: max-content !important;
+    overflow-y: hidden !important;
+    background: rgb(17, 20, 64);
   padding-top: 7%;
+  padding-bottom: 7%;
+}
+.piks{
+  height: 250px !important;
+  width: 400px !important;
+   object-fit: cover;
+}
+h3{
+  color: white;
+  text-decoration: underline;
+}
+p{
+  color:white;
 }
 .backie{
   position: fixed;

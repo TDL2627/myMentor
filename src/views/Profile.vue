@@ -10,11 +10,11 @@
 </div>
 </div>
 
- <div  class="student" v-for="student in students" :key="student._id">
-    <h3 class="name">Name : {{student.name}}</h3>
-    <p>Email : {{student.email}}</p>
-    <p>Number : {{student.contact}}</p>
-    <p>Qualification : {{student.subject}}</p>
+ <div  class="student" v-if="students">
+    <h3 class="name">Name : {{students.name}}</h3>
+    <p>Email : {{students.email}}</p>
+    <p>Number : {{students.contact}}</p>
+    <p>Qualification : {{students.subject}}</p>
   </div>
   </div>
 </template>
@@ -30,13 +30,13 @@ return{
 }
 },
 
- mounted(){
-   this.loading = true
+    mounted(){
+      this.loading=true
       if (!localStorage.getItem("jwt")) {
-        alert("Student not logged in");
+        alert("User not logged in");
         return this.$router.push({ name: "Login" });
       }
-      fetch("https://mymentor-server.herokuapp.com/students", {
+      fetch("https://mymentor-server.herokuapp.com/students/1", {
         method: "GET",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -51,7 +51,29 @@ return{
         .catch((err) => {
           alert(err);
         });
-    }
+       }
+//  mounted(){
+//    this.loading = true
+//       if (!localStorage.getItem("jwt")) {
+//         alert("Student not logged in");
+//         return this.$router.push({ name: "Login" });
+//       }
+//       fetch("https://mymentor-server.herokuapp.com/students", {
+//         method: "GET",
+//         headers: {
+//           "Content-type": "application/json; charset=UTF-8",
+//           Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+//         },
+//       })
+//         .then((response) => response.json())
+//         .then((json) => {
+//           this.students = json
+//           this.loading = false
+//         })
+//         .catch((err) => {
+//           alert(err);
+//         });
+//     }
 }
 </script>
 

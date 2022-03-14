@@ -118,7 +118,7 @@ data(){
    methods: {
     //  create
     createNote() {
-      if (!localStorage.getNote("jwt")) {
+      if (!localStorage.getItem("jwt")) {
         alert("User not logged in");
         return this.$router.push({ name: "Login" });
       }

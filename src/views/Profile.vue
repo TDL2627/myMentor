@@ -2,6 +2,12 @@
   <div class="profile">
       <h1 class="heading">Profile</h1>
 
+ <div  class="student" v-for="student in students" :key="student._id">
+    <h3 class="name">Name : {{student.name}}</h3>
+    <p>Email : {{student.email}}</p>
+    <p>Number : {{student.contact}}</p>
+    <p>Qualification : {{student.subject}}</p>
+  </div>
   </div>
 </template>
 
@@ -18,7 +24,7 @@ return{
         alert("Student not logged in");
         return this.$router.push({ name: "Login" });
       }
-      fetch("http://localhost:2627/students", {
+      fetch("https://mymentor-server.herokuapp.com/students", {
         method: "GET",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -40,5 +46,12 @@ return{
 <style scoped>
 .profile{
     padding-top: 7%;
+}
+h3,p{
+  color:white;
+}
+.student{
+  border: 2px solid black;
+  margin: 100px;
 }
 </style>

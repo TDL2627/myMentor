@@ -8,7 +8,7 @@
   <div class="circle circle-2"></div>
 </div>
 </div>
-<a class="nav-link" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<a class="addie" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Add a note
 </a>
 
@@ -188,6 +188,16 @@ p{
     overflow-y: scroll;
   text-align: start !important;
 
+}
+.addie{
+  position: fixed;
+  right:20px;
+  top:10%;
+  border: 2px solid royalblue;
+  text-decoration: none;
+  border-radius: 25px;
+ background: black;
+  padding:10px;
 }
 h3{
   color: black;

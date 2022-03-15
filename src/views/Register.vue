@@ -122,6 +122,13 @@ label{
     padding-left: 350px;
     margin: 50px;
 }
+@media only screen and (max-width: 600px) {
+.register{
+ 
+  
+    padding-bottom: 30%;
+}
+}
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {
       box-sizing: border-box;

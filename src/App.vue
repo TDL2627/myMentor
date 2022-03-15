@@ -45,7 +45,7 @@ h1{
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgb(17, 20, 64); 
+  background: transparent; 
 }
  
 /* Handle */

@@ -49,11 +49,18 @@
 </div>
 <div class="container">
   <div class="row">
-<div class="notez col-lg-6" v-for="note in notes" :key="note.title">
+<div class="notez col-lg-6 col-sm-12" v-for="note in notes" :key="note.title">
+  <div class="buts d-flex">
+<button v-on:click="deleteNote(note._id)" class="btn  btn-danger" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
+<button class="btn btn-primary"><img class="ico" src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"/></button>
+</div>
 <h3>{{note.title}}</h3>
+<div class="note-body">
 <p>{{note.body}}</p>
-<button v-on:click="deleteNote(note._id)" class="btn  btn-danger" >DELETE</button>
-<button class="btn btn-primary">EDIT</button>
+</div>
+
+
+
 </div>
   </div>
 </div>
@@ -171,21 +178,26 @@ data(){
     background: rgb(17, 20, 64);
 }
 button{
-  margin:5%;
+  margin:2%;
+}
+.ico{
+  height: 20px;
+}
+.buts{
+  float:right;
 }
 .notez{
   border: 2px solid black;
   width: 40%;
   margin: 5%;
   background: #d2e951;
-  height: 200px;
+  height: 150px;
 }
 ul{
   list-style: none;
 }
 p{
   color: #000;
-    overflow-y: scroll;
   text-align: start !important;
 
 }
@@ -202,6 +214,27 @@ p{
 h3{
   color: black;
   text-decoration: underline black;
+}
+.note-body{
+  overflow-y: scroll;
+  height: 70px;
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 600px) {
+.notepad{
+  padding-top:20% ;
+   padding-bottom:20% ;
+}
+.notez{
+  width: 90% !important;
+}
+.note-body{
+  overflow-y: scroll;
+  height: 100px;
+}
+.ico{
+  height: 20px;
+}
 }
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {

@@ -149,6 +149,13 @@ h3{
     margin: 10px;
     padding-right: 20px;
 }
+/* media query */
+@media only screen and (max-width: 600px) {
+.feedback{
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+}
 /* loader */
 
 .half-circle-spinner, .half-circle-spinner * {

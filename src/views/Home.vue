@@ -62,7 +62,7 @@ export default {
   padding-bottom: 10px;
   padding-left: 20px;
  padding-right: 20px;
-  margin: 50px;
+  margin: 30px;
 }
 @media only screen and (max-width: 600px) {
   .home{
@@ -78,7 +78,7 @@ export default {
   display: initial;
   position: fixed;
   bottom: 30%;
-  left: 5%;
+  left: 2%;
 }
 }
 </style>

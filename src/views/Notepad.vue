@@ -113,9 +113,8 @@ data(){
     
   },
    methods: {
-    //  create a note
-    createNote() {
-         this.loading = true
+     createNote() {
+        
       if (!localStorage.getItem("jwt")) {
         alert("User not logged in");
         return this.$router.push({ name: "Login" });
@@ -135,7 +134,6 @@ data(){
         .then((response) => response.json())
     
         .then((json) => {
-          this.loading = false;
           this.title="";
           this.body="";
           alert("Note added");
@@ -146,6 +144,7 @@ data(){
           this.loading = false;
         });
     },
+    
     // delete
  deleteNote: function (id) {
       if (localStorage.getItem("jwt")){

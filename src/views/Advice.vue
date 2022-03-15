@@ -6,15 +6,15 @@
 <div class="container desktop">
   <div class="row">
  <div class="col-lg-6">
-   <router-link class="tabby" to="/advice/time">TIME MANAGEMENT</router-link>
+   <router-link class="tabby tm" to="/advice/time">TIME MANAGEMENT</router-link>
  </div>
  <div class="col-lg-6">
-   <router-link class="tabby" to="/advice/study">STUDY GUIDE</router-link>
+   <router-link class="tabby" to="/advice/mental">MENTAL HELP</router-link>
  </div>
   </div>
   <div class="row">
     <div class="col-lg-6">
-   <router-link class="tabby" to="/advice/mental">MENTAL HELP</router-link>
+   <router-link class="tabby" to="/advice/study">STUDY GUIDE</router-link>
  </div>
  <div class="col-lg-6">
    <router-link class="tabby" to="/advice/exam">EXAM PREP</router-link>
@@ -54,19 +54,20 @@ components:{
     padding-top: 20%;
   }
   .row{
-    margin: 20px;
-    margin-bottom: 100px;
+    margin: 0px;
+    margin-bottom: 0px;
   }
   .tabby{
     padding: 10px;
     border-radius:25px ;
   }
   .col-lg-6{
-    width: 50%;
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 70px;
   }
   .desktop{
     padding-top: 20%;
   }
+  
 }
 </style>

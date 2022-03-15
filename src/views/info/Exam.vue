@@ -81,6 +81,10 @@ p{
   right: 50px;
   top: 100px;
 }
+/* media query */
+@media only screen and (max-width: 600px) {
+
+}
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {
       box-sizing: border-box;

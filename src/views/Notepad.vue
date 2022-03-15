@@ -221,6 +221,7 @@ h3{
   height: 70px;
   overflow-x: hidden;
 }
+/* media query */
 @media only screen and (max-width: 600px) {
 .notepad{
   padding-top:20% ;

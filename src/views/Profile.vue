@@ -96,6 +96,14 @@ h3,p{
   border: 2px solid black;
   margin: 100px;
 }
+/* media query */
+@media only screen and (max-width: 600px) {
+.profile{
+  padding-top: 20%;
+   padding-bottom: 20%;
+}
+}
+/* loader */
 .half-circle-spinner, .half-circle-spinner * {
       box-sizing: border-box;
     }

@@ -81,9 +81,27 @@ p{
   right: 50px;
   top: 100px;
 }
+hr{
+  margin: 20px;
+  color: #1d92ff;
+}
+.row{
+  margin-top: 50px;
+}
 /* media query */
 @media only screen and (max-width: 600px) {
-
+.exam{
+   padding-top: 20%;
+  padding-bottom: 20%;
+}
+.backie{
+  display: none;
+}
+.piks{
+  height: 150px !important;
+  width: 200px !important;
+   object-fit: cover;
+}
 }
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {

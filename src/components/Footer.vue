@@ -1,8 +1,8 @@
 <template>
   <div class="footer">
       <p>2021</p>
-      <p>© Kannemeyer</p>
-   <p class="tdl">TDL2627</p>
+      <p>myMentor</p>
+   <p class="tdl">©TDL2627</p>
   </div>
 </template>
 

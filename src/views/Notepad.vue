@@ -191,6 +191,7 @@ button{
   width: 40%;
   margin: 5%;
   background: #d2e951;
+  padding: 1%;
   height: 150px;
 }
 ul{

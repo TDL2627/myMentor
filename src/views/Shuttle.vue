@@ -72,6 +72,11 @@ table{
   width: 95%;
   margin: 2%;
 }
+@media only screen and (max-width: 600px) {
+.shuttles{
+  padding-top: 20%;
+}
+}
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {
       box-sizing: border-box;

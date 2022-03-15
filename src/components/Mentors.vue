@@ -10,7 +10,7 @@
  <h1 class="heading">Mentors</h1>
  <div class="container">
    <div class="row">
-  <div class="col-lg-5 mentor"  v-for="mentor in mentors" :key="mentor.name">
+  <div class="col-lg-5  mentor"  v-for="mentor in mentors" :key="mentor.name">
      <img class="piks" :src="require('@/assets/'+ mentor.pic)">
     <h3 class="name">{{mentor.name}}</h3>
     <h4>{{mentor.qualification}}</h4>
@@ -55,6 +55,7 @@ async created () {
     overflow-y: hidden !important;
     background: rgb(17, 20, 64);
     width: 100%;
+  
     padding-top: 7%;
     padding-bottom: 7%;
 }
@@ -73,6 +74,18 @@ img{
 h3,p,h4{
     color: white;
 }
+@media only screen and (max-width: 600px) {
+  .mentors{
+    padding-top:20% ;
+    padding-bottom: 20%;
+ 
+  }
+  .mentor{
+    width: 80%;
+   margin-left:10%;
+  }
+}
+
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {
       box-sizing: border-box;

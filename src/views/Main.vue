@@ -145,7 +145,7 @@ export default {
 /* media query */
 @media only screen and (max-width: 600px) {
 .main-ou{
-    padding-top: 25%;
+    padding-top: 20%;
 }
 .desktop{
     display: none;

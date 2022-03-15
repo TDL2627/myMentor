@@ -3,18 +3,22 @@
 
 <h1 class="huge-head">myMentor</h1>
 
-<div class="container">
+<div class="container desktop">
   <div class="row">
-<div class="col-lg-6 col-sm-12">
+<div class="col-lg-6 col-md-6">
 <router-link class="home-but" to="/login">LOGIN</router-link>
 </div>
-<div class="col-lg-6 col-sm-12">
+<div class="col-lg-6 col-md-6">
   <router-link class="home-but" to="/register">REGISTER</router-link>
 </div>
 
   </div>
 </div>
-
+<!-- mobile -->
+<div class="mobile">
+  <router-link class="mobi-link" to="/login">LOGIN</router-link>
+  <router-link class="mobi-link" to="/register">REGISTER</router-link>
+</div>
 
   </div>
 </template>
@@ -46,15 +50,35 @@ export default {
 .container{
   padding-top: 10%;
 }
+.mobile{
+  display: none;
+}
+.mobi-link{
+   border-radius: 25px;
+   border: solid 5px rgb(52, 152, 235);
+  text-decoration: none;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+ padding-right: 20px;
+  margin: 50px;
+}
 @media only screen and (max-width: 600px) {
+  .home{
+  padding-top:30%;
+}
 .huge-head{
   font-size: 50px;
 }
-.home-but{
-  border: solid 5px rgb(52, 152, 235);
-  text-decoration: none;
- padding: 0;
-
+.desktop{
+  display: none;
+}
+.mobile{
+  display: initial;
+  position: fixed;
+  bottom: 30%;
+  left: 5%;
 }
 }
 </style>

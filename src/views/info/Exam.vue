@@ -82,7 +82,8 @@ p{
   top: 100px;
 }
 hr{
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   color: #1d92ff;
 }
 .row{
@@ -92,6 +93,7 @@ hr{
 @media only screen and (max-width: 600px) {
 .exam{
    padding-top: 20%;
+   width: 100%;
   padding-bottom: 20%;
 }
 .backie{

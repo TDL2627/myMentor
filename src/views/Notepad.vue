@@ -225,7 +225,7 @@ h3{
 @media only screen and (max-width: 600px) {
 .notepad{
   padding-top:20% ;
-   padding-bottom:20% ;
+   padding-bottom:25% ;
 }
 .notez{
   width: 90% !important;

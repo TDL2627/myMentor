@@ -89,6 +89,30 @@ h3{
 p{
   color:white;
 }
+hr{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #1d92ff;
+}
+.row{
+  margin-top: 50px;
+}
+/* media query */
+@media only screen and (max-width: 600px) {
+.study{
+   padding-top: 20%;
+   width: 100%;
+  padding-bottom: 20%;
+}
+.backie{
+  display: none;
+}
+.piks{
+  height: 150px !important;
+  width: 200px !important;
+   object-fit: cover;
+}
+}
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {
       box-sizing: border-box;

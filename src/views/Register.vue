@@ -124,8 +124,6 @@ label{
 }
 @media only screen and (max-width: 600px) {
 .register{
- 
-  
     padding-bottom: 30%;
 }
 }

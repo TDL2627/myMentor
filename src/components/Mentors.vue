@@ -77,7 +77,7 @@ h3,p,h4{
 @media only screen and (max-width: 600px) {
   .mentors{
     padding-top:20% ;
-    padding-bottom: 20%;
+    padding-bottom: 25%;
  
   }
   .mentor{

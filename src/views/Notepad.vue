@@ -114,7 +114,7 @@ data(){
   },
    methods: {
      createNote() {
-        
+         this.loading = true
       if (!localStorage.getItem("jwt")) {
         alert("User not logged in");
         return this.$router.push({ name: "Login" });
@@ -134,10 +134,10 @@ data(){
         .then((response) => response.json())
     
         .then((json) => {
-          
-          alert("Note added");
+          this.loading = false;
           this.title="";
           this.body="";
+          alert("Note added");
           this.$router.go()
         })
         .catch((err) => {

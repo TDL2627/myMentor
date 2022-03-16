@@ -21,16 +21,36 @@
 
 <script>
 import Nav from "../components/Navbar.vue"
-import axios from "axios";
+// import axios from "axios";
 export default {
   components:{ Nav},
 data(){
 return{
   students:null,
-  student:{},
+  student:null,
   loading:false
 }
 },
+ mounted(){
+      if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      }
+      fetch("https://mymentor-server.herokuapp.com/students/1/", {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          this.student = json
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    },
 
     // mounted(){
     //   this.loading=true
@@ -54,14 +74,14 @@ return{
     //       alert(err);
     //     });
     //    },
-      //  axois attempt
-       created() {
-        let apiURL = `https://mymentor-server.herokuapp.com/students/${this.$route.params.id}`;
+    //   //  axois attempt
+    //    created() {
+    //     let apiURL = `https://mymentor-server.herokuapp.com/students/${this.$route.params.id}`;
 
-        axios.get(apiURL).then((res) => {
-            this.student = res.data;
-        })
-    }
+    //     axios.get(apiURL).then((res) => {
+    //         this.student = res.data;
+    //     })
+    // }
 //  mounted(){
 //    this.loading = true
 //       if (!localStorage.getItem("jwt")) {

@@ -10,48 +10,58 @@
 </div>
 </div>
 
- <div  class="student" v-if="students">
-    <h3 class="name">Name : {{students.name}}</h3>
-    <p>Email : {{students.email}}</p>
-    <p>Number : {{students.contact}}</p>
-    <p>Qualification : {{students.subject}}</p>
+ <div  class="student" v-if="student">
+    <h3 class="name">Name : {{student.name}}</h3>
+    <p>Email : {{student.email}}</p>
+    <p>Number : {{student.contact}}</p>
+    <p>Qualification : {{student.subject}}</p>
   </div>
   </div>
 </template>
 
 <script>
 import Nav from "../components/Navbar.vue"
+import axios from "axios";
 export default {
   components:{ Nav},
 data(){
 return{
   students:null,
+  student:{},
   loading:false
 }
 },
 
-    mounted(){
-      this.loading=true
-      if (!localStorage.getItem("jwt")) {
-        alert("User not logged in");
-        return this.$router.push({ name: "Login" });
-      }
-      fetch("https://mymentor-server.herokuapp.com/students/1", {
-        method: "GET",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-        },
-      })
-        .then((response) => response.json())
-        .then((json) => {
-          this.students = json
-          this.loading = false
+    // mounted(){
+    //   this.loading=true
+    //   if (!localStorage.getItem("jwt")) {
+    //     alert("User not logged in");
+    //     return this.$router.push({ name: "Login" });
+    //   }
+    //   fetch("https://mymentor-server.herokuapp.com/students/1", {
+    //     method: "GET",
+    //     headers: {
+    //       "Content-type": "application/json; charset=UTF-8",
+    //       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+    //     },
+    //   })
+    //     .then((response) => response.json())
+    //     .then((json) => {
+    //       this.students = json
+    //       this.loading = false
+    //     })
+    //     .catch((err) => {
+    //       alert(err);
+    //     });
+    //    },
+      //  axois attempt
+       created() {
+        let apiURL = `https://mymentor-server.herokuapp.com/students/${this.$route.params.id}`;
+
+        axios.get(apiURL).then((res) => {
+            this.student = res.data;
         })
-        .catch((err) => {
-          alert(err);
-        });
-       }
+    }
 //  mounted(){
 //    this.loading = true
 //       if (!localStorage.getItem("jwt")) {

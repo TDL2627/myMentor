@@ -50,16 +50,12 @@
 <!-- note -->
 <div class="container">
   <div class="row">
-<div class="notez col-lg-6 col-sm-12" v-for="note in notes" :key="note.title">
+<div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title">
   <div class="buts d-flex">
-    <router-link :to="{name: 'Note', params: { id: note._id }}">Get One</router-link>
-<button v-on:click="deleteNote(note._id)" class="btn  btn-danger" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
-<button class="btn btn-primary"><img class="ico" src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"/></button>
+    <router-link class="notie" :to="{name: 'Note', params: { id: note._id }}"><h3 class="note-head">{{note.title}}</h3></router-link>
 </div>
-<h3>{{note.title}}</h3>
-<div class="note-body">
-<p>{{note.body}}</p>
-</div>
+
+
 
 
 
@@ -146,25 +142,6 @@ data(){
           alert("It failed.Try again please");
           this.loading = false;
         });
-    },
-    
-    // delete
- deleteNote: function (id) {
-      if (localStorage.getItem("jwt")){
-        fetch('https://mymentor-server.herokuapp.com/note/'+ id ,{
-          method: 'DELETE',
-          headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-        },
-        })
-        .then(res => res.json())
-        .catch(error => console.error('Error:', error))
-        .then(response => console.log('Success:', response));
-        alert("Note Deleted")
-         this.$router.go();
-        
-          }
     }
    }
   
@@ -179,22 +156,25 @@ data(){
     overflow-y: hidden !important;
     background: rgb(17, 20, 64);
 }
-button{
-  margin:2%;
-}
+
 .ico{
   height: 20px;
 }
-.buts{
-  float:right;
+.notie{
+  padding-left: 160px;
+  padding-right: 140px;
+}
+.note-head{
+  width:150px;
+  overflow: hidden;
 }
 .notez{
   border: 2px solid black;
   width: 40%;
   margin: 5%;
-  background: #d2e951;
+  background: white;
   padding: 1%;
-  height: 150px;
+  height: 50px;
 }
 ul{
   list-style: none;
@@ -218,11 +198,7 @@ h3{
   color: black;
   text-decoration: underline black;
 }
-.note-body{
-  overflow-y: scroll;
-  height: 70px;
-  overflow-x: hidden;
-}
+
 /* media query */
 @media only screen and (max-width: 600px) {
 .notepad{
@@ -238,6 +214,14 @@ h3{
 }
 .ico{
   height: 20px;
+}
+.notie{
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.note-head{
+  width:150px;
+  overflow: hidden;
 }
 }
 /* loader */

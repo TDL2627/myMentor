@@ -11,7 +11,7 @@
 <a class="addie" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Add a note
 </a>
-
+<router-link to="/note">ONe note</router-link>
 <!-- Modal for add  note -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -141,7 +141,7 @@ data(){
           this.$router.go()
         })
         .catch((err) => {
-          alert(err);
+          alert("It failed.Try again please");
           this.loading = false;
         });
     },

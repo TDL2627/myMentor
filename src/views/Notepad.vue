@@ -134,9 +134,10 @@ data(){
         .then((response) => response.json())
     
         .then((json) => {
+          
+          alert("Note added");
           this.title="";
           this.body="";
-          alert("Note added");
           this.$router.go()
         })
         .catch((err) => {

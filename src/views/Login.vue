@@ -9,7 +9,7 @@
   <h1 class="heading">LOGIN</h1>
   <form @submit.prevent="login">
       <h3>EMAIL</h3>
-<input class="putting"  v-model="email"  placeholder="Type here..." type="text">
+<input class="putting"  v-model="email"  placeholder="Type here..." type="email">
  <h3>PASSWORD</h3>
 <input class="putting"    v-model="password" placeholder="Type here..." type="password">
 <br><br>
@@ -49,14 +49,30 @@ try{
       })
         .then((response) => response.json())
         .then((json) => {
-          localStorage.setItem("jwt", json.jwt);
-          this.loading = false
-          this.$router.push({ name: "Main" });
+          if(json.jwt){
+               localStorage.setItem("jwt", json.jwt);
+                         this.loading = false
 
+          }
+      
+          if(localStorage.getItem("jwt")){
+            this.$router.push({ name: "Main" });
+                      this.loading = false
+
+          }
+          else{
+             this.$router.push({ name: "Login" });
+            alert("Incorrect Details");
+                      this.loading = false
+
+            
+          }
         })
 }
      
         catch(err)  {
+           this.$router.push({ name: "Login" });
+
           alert(err);
           this.loading = false
         }

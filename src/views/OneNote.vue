@@ -7,7 +7,7 @@
       </div>
     </div>
   </div>
-  <div v-else>Loading the note...</div>
+
 </template>
 <script>
 export default {
@@ -18,7 +18,8 @@ export default {
     };
   },
   mounted() {
-    fetch("http://localhost:2627/note/" + this.id, {
+      if(this.id, localStorage.getItem("jwt")){
+  fetch("http://localhost:2627/note/" + this.id, {
       method: "GET",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -26,23 +27,11 @@ export default {
       },
     })
       .then((response) => response.json())
-      .then(async (json) => {
+      .then( (json) => {
         this.note = json;
-        await fetch(
-          "http://localhost:2627/students/" + json._id,
-          {
-            method: "GET",
-            headers: {
-              "Content-type": "application/json; charset=UTF-8",
-              Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-            },
-          }
-        )
-          .then((response) => response.json())
-          .then((json) => {
-            this.note.author = json._id;
-          });
       });
+      }
+  
   },
 };
 </script>

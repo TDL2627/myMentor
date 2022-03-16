@@ -41,14 +41,6 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Times.vue')
   },
   {
-    path: '/notepad',
-    name: 'Notepad',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Notepad.vue')
-  },
-  {
     path: '/feedback',
     name: 'Feedback',
     // route level code-splitting
@@ -121,12 +113,21 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/Profile.vue')
   },
   {
-    path: '/note',
+    path: '/notepad',
+    name: 'Notepad',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/Notepad.vue')
+  },
+  {
+    path: '/notepad/:id',
     name: 'Note',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/OneNote.vue')
+    component: () => import(/* webpackChunkName: "about" */ '../views/OneNote.vue'),
+    props:true
   }
 ]
 

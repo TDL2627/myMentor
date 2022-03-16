@@ -9,9 +9,9 @@
   <h1 class="heading">LOGIN</h1>
   <form @submit.prevent="login">
       <h3>EMAIL</h3>
-<input class="putting"  v-model="email"  placeholder="Type here..." type="email">
+<input class="putting"  v-model="email"  required placeholder="Type here email..." type="email">
  <h3>PASSWORD</h3>
-<input class="putting"    v-model="password" placeholder="Type here..." type="password">
+<input class="putting"    v-model="password" required placeholder="Type here  password..." type="password">
 <br><br>
       <button class="butt" type="submit">SUBMIT</button>
   </form>

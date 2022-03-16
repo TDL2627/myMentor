@@ -11,7 +11,7 @@
 <a class="addie" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Add a note
 </a>
-<router-link to="/note">ONe note</router-link>
+
 <!-- Modal for add  note -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -47,10 +47,12 @@
     </div>
   </div>
 </div>
+<!-- note -->
 <div class="container">
   <div class="row">
 <div class="notez col-lg-6 col-sm-12" v-for="note in notes" :key="note.title">
   <div class="buts d-flex">
+    <router-link :to="{name: 'Note', params: { id: note._id }}">Get One</router-link>
 <button v-on:click="deleteNote(note._id)" class="btn  btn-danger" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
 <button class="btn btn-primary"><img class="ico" src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"/></button>
 </div>

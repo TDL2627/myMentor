@@ -31,7 +31,13 @@ import Nav from "../components/Navbar.vue"
 export default {
 components:{
   Nav
-}
+},
+  mounted(){
+      if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      }
+      },
 }
 </script>
 

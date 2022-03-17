@@ -42,6 +42,12 @@ data(){
     loading:false
   }
 },
+  mounted(){
+      if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      }
+      },
 async created () {
     this.loading = true
     try {

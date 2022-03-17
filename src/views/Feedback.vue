@@ -60,6 +60,12 @@ components:{Nav},
     }
 
   },
+    mounted(){
+      if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      }
+      },
   methods:{
      
   async  feedBack(){

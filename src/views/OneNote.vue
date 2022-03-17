@@ -94,8 +94,10 @@ export default {
           Authorization: `Bearer ${localStorage.getItem("jwt")}`,
         },
         })
+        
         .then(res => res.json())
         .catch(error => console.error('Error:', error))
+   
         .then(response => console.log('Success:', response));
         alert("Note Deleted")
          this.$router.push({ name: "Notepad" });

@@ -67,6 +67,12 @@
 
 <script>
 export default {
+     mounted(){
+      if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      }
+      },
  methods: {
       logout() {
         localStorage.removeItem('jwtToken')

@@ -8,15 +8,14 @@
         <p>{{ note.body }}</p>
       </div>
       <button v-on:click="deleteNote(note._id)" class="btn  btn-danger" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
-<button class="btn btn-primary"><img class="ico" src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"/></button>
-
+<a class="addie" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+ <img class="ico" src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"/>
+</a>
     </div>
   </div>
 
 
-<a class="addie" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Edit a note
-</a>
+
 
 <!-- Modal for edit note -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

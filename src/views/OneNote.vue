@@ -1,6 +1,12 @@
 <template>
 <div class="oneNote">
     <Nav/>
+       <div v-if="loading" >
+ <div class="half-circle-spinner">
+  <div class="circle circle-1"></div>
+  <div class="circle circle-2"></div>
+</div>
+</div>
   <div v-if="note">
     <div class="note">
       <div class="note-details">
@@ -62,10 +68,12 @@ export default {
     return {
       note: null,
       title:"",
-      body:""
+      body:"",
+      loading:false
     };
   },
   mounted() {
+    this.loading = true
       if(this.id, localStorage.getItem("jwt")){
   fetch("https://mymentor-server.herokuapp.com/note/" + this.id, {
       method: "GET",
@@ -77,7 +85,12 @@ export default {
       .then((response) => response.json())
       .then( (json) => {
         this.note = json;
-      });
+        this.loading = false
+      })
+        .catch((err) => {
+          alert("Not logged in");
+          this.$router.push({ name: "Login" })
+        });
       }
   
   },

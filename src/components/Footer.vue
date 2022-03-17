@@ -1,8 +1,18 @@
 <template>
-  <div class="footer">
+<div class="foot">
+
+
+  <div class="footer pc">
       <p>2021</p>
       <p>myMentor</p>
    <p class="tdl">©TDL2627</p>
+  </div>
+
+   <div class="footer mobile">
+   
+      <p class="mentor">myMentor - 2021</p>
+   <p class="tdl">©TDL2627</p>
+  </div>
   </div>
 </template>
 
@@ -13,6 +23,9 @@ export default {
 </script>
 
 <style scoped>
+.mobile{
+    display: none;
+}
 .footer{
     position: fixed;
     bottom: 0;
@@ -25,5 +38,21 @@ export default {
     position: fixed;
     bottom: 10px;
     right: 30px;
+}
+@media only screen and (max-width:700px) {
+    .mobile{
+        display: initial;
+        height: 50px;
+        padding: 10px;
+    }
+    .mentor{
+    position: fixed;
+    bottom: 10px;
+    left: 30px;
+}
+    .pc{
+        display: none;
+    }
+    
 }
 </style>

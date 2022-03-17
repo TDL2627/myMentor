@@ -1,11 +1,6 @@
 <template>
-
 <div class="main-ou">
-<div class="navi">
-       <router-link to="/main"><img class="nav-logo" src="@/assets/mentlogo.png" alt="logo"></router-link> 
-      <router-link class="account"  to="/profile">PROFILE</router-link>
-      <button class="outtie" @click="logout()">LOG OUT</button>
-  </div>
+<Nav/>
 <h1 class="heading">HOME</h1>
 
 
@@ -66,7 +61,11 @@
 </template>
 
 <script>
+import Nav from "../components/Navbar.vue"
 export default {
+    components:{
+        Nav
+    },
      mounted(){
       if (!localStorage.getItem("jwt")) {
         alert("User not logged in");
@@ -105,48 +104,9 @@ export default {
 .mobile{
     display: none;
 }
-/* nav */
-.nav-logo{
-   position: fixed;
-    top: 0px;
-    left: 5px;
-  height: 40px;
-  background: white;
-  border-radius: 50%;
-  margin: 5px;
-  display: initial;
-}
-.navi{
-      position: fixed;
-    top: 0;
-    left: 0;
-    height: 50px;
-    width: 100%;
-    background-color: rgb(63, 72, 204);
-}
-.outtie{
-    position: fixed;
-    top: 5px;
-    right: 10px;
-    text-decoration: none;
-    color: red;
-    background: white;
-    border: solid red 2px;
-    border-radius: 25px;
-    padding: 5px;
-}
 
-.account{
-  position: fixed;
-  top:5px;
-  background: white;
-  border-radius: 25px;
-  padding: 5px;
-  border: solid 1px rgb(63, 72, 204);
-  right:  120px;
-  left: none;
-  text-decoration: none;
-}
+
+
 
 /* media query */
 @media only screen and (max-width: 600px) {

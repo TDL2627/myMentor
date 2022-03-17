@@ -35,7 +35,7 @@ h1{
   color: white
 }
 .heading{
-   color: rgb(52, 152, 235);
+   color: cadetblue;
    text-decoration: underline;
 }
 /* width */

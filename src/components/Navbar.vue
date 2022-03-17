@@ -52,8 +52,8 @@ export default {
 .navg{
   padding-left: 20%;
 }
-.nav-link:hover{
-  color: white;
+.nav-link:hover,.dropdown-item:hover{
+  color: cadetblue;
 text-decoration: underline;
 }
 a.router-link-exact-active {

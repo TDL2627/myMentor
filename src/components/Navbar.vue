@@ -10,9 +10,10 @@
     <router-link class="nav-link" to="/shuttle">SHUTTLE</router-link>
     <router-link class="nav-link" to="/times">TIME TABLE</router-link>
     <router-link class="nav-link" to="/feedback">FEED BACK</router-link>
-     <router-link class="nav-link" to="/advice">INFORMATION</router-link>
+     <router-link class="nav-link info" to="/advice">INFORMATION</router-link>
  <div class="dropdown">    
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+  <button class="btn droppie btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+MORE
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li><router-link class="dropdown-item" to="/advice/exam">EXAM PREPERATION</router-link></li>
@@ -23,6 +24,7 @@
   </ul>
 </div>
     <router-link class="nav-link"  to="/profile">PROFILE</router-link>
+
     </div>
     
 
@@ -62,6 +64,11 @@ color: cadetblue;
 font-weight: bold;
 text-decoration: underline ;
 }
+
+.droppie{
+  margin: 0;
+  padding: 2px;
+}
 .navi{
       position: fixed;
     top: 0;
@@ -69,6 +76,9 @@ text-decoration: underline ;
     height: 50px;
     width: 100%;
     background-color: rgb(63, 72, 204);
+}
+.droppie{
+  margin-top: 5px;
 }
 .outtie{
     position: fixed;

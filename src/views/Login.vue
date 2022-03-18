@@ -27,7 +27,6 @@ export default {
       name:"",
       email: "",
       password: "",
-      msg:"",
       loading:false
       
     };
@@ -52,7 +51,7 @@ try{
           if(user.jwt){
                localStorage.setItem("jwt", user.jwt);
                localStorage.setItem("student", user.student);
-               console.log(user.student)
+              //  console.log(user.student)
                          this.loading = false
 
           }

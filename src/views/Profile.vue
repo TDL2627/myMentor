@@ -10,7 +10,10 @@
 </div>
 </div>
 
- <div  class="student" v-if="student">
+
+
+<!-- get all -->
+ <div  class="student" v-for="student in students" :key="student._id">
     <h3 class="name">Name : {{student.name}}</h3>
     <p>Email : {{student.email}}</p>
     <p>Number : {{student.contact}}</p>
@@ -26,16 +29,17 @@ export default {
   components:{ Nav},
 data(){
 return{
+
   students:null,
-  student:null,
   loading:false
 }
 },
  mounted(){
-      if (!localStorage.getItem("jwt")) {
-        alert("User not logged in");
-        return this.$router.push({ name: "Login" });
+      if (localStorage.getItem("student")) {
+   
+  
       }
+        
       fetch("https://mymentor-server.herokuapp.com/students/", {
         method: "GET",
         headers: {
@@ -45,65 +49,14 @@ return{
       })
         .then((response) => response.json())
         .then((json) => {
-          this.student = json
+          this.students = json
+          
         })
         .catch((err) => {
           alert(err);
         });
     },
 
-    // mounted(){
-    //   this.loading=true
-    //   if (!localStorage.getItem("jwt")) {
-    //     alert("User not logged in");
-    //     return this.$router.push({ name: "Login" });
-    //   }
-    //   fetch("https://mymentor-server.herokuapp.com/students/1", {
-    //     method: "GET",
-    //     headers: {
-    //       "Content-type": "application/json; charset=UTF-8",
-    //       Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-    //     },
-    //   })
-    //     .then((response) => response.json())
-    //     .then((json) => {
-    //       this.students = json
-    //       this.loading = false
-    //     })
-    //     .catch((err) => {
-    //       alert(err);
-    //     });
-    //    },
-    //   //  axois attempt
-    //    created() {
-    //     let apiURL = `https://mymentor-server.herokuapp.com/students/${this.$route.params.id}`;
-
-    //     axios.get(apiURL).then((res) => {
-    //         this.student = res.data;
-    //     })
-    // }
-//  mounted(){
-//    this.loading = true
-//       if (!localStorage.getItem("jwt")) {
-//         alert("Student not logged in");
-//         return this.$router.push({ name: "Login" });
-//       }
-//       fetch("https://mymentor-server.herokuapp.com/students", {
-//         method: "GET",
-//         headers: {
-//           "Content-type": "application/json; charset=UTF-8",
-//           Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-//         },
-//       })
-//         .then((response) => response.json())
-//         .then((json) => {
-//           this.students = json
-//           this.loading = false
-//         })
-//         .catch((err) => {
-//           alert(err);
-//         });
-//     }
 }
 </script>
 

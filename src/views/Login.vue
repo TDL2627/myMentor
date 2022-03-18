@@ -51,7 +51,8 @@ try{
           if(user.jwt){
                localStorage.setItem("jwt", user.jwt);
                localStorage.setItem("student", user.student);
-              //  console.log(user.student)
+               const person = user.student
+               console.log(person)
                          this.loading = false
 
           }

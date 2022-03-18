@@ -35,9 +35,9 @@ return{
 }
 },
  mounted(){
-      if (localStorage.getItem("student")) {
-   
-  
+    if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
       }
         
       fetch("https://mymentor-server.herokuapp.com/students/", {

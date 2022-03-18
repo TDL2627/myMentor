@@ -93,6 +93,7 @@ export default {
 
 <style scoped>
 /* mobile */
+
 .mobility{
   display: none;
 }

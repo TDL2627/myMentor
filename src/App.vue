@@ -17,6 +17,9 @@ export default {
 *{
   font-family: 'Oswald', sans-serif;
 }
+body{
+  overflow: initial !important;;
+}
 #app {
   height: 100vh !important;
 width: 100% !important;

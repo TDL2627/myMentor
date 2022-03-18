@@ -48,9 +48,11 @@ try{
         },
       })
         .then((response) => response.json())
-        .then((json) => {
-          if(json.jwt){
-               localStorage.setItem("jwt", json.jwt);
+        .then((user) => {
+          if(user.jwt){
+               localStorage.setItem("jwt", user.jwt);
+               localStorage.setItem("student", user.student);
+               console.log(user.student)
                          this.loading = false
 
           }

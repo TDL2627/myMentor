@@ -36,7 +36,7 @@ return{
         alert("User not logged in");
         return this.$router.push({ name: "Login" });
       }
-      fetch("https://mymentor-server.herokuapp.com/students/1/", {
+      fetch("https://mymentor-server.herokuapp.com/students/", {
         method: "GET",
         headers: {
           "Content-type": "application/json; charset=UTF-8",

@@ -11,8 +11,7 @@
 
   <br><br>
 <form @submit.prevent="feedBack">
-  <h3>Enter your name</h3>
-  <input v-model="name" type="text" required>
+
 
 <h3>How are you feeling?</h3>
 
@@ -51,12 +50,15 @@ export default {
 components:{Nav},
   data(){
     return{
-  name:"",
+  name: localStorage.getItem("name"),
   feels:"",
   exp:"",
   say:"",
   issue:"",
-  loading:false
+  loading:false,
+  email: localStorage.getItem("email"),
+  number: localStorage.getItem("contact"),
+  subject: localStorage.getItem("subject"),
     }
 
   },
@@ -78,7 +80,10 @@ components:{Nav},
     feels: this.feels,
     exp: this.exp,
     say: this.say,
-    issue: this.issue
+    issue: this.issue,
+    email:this.email,
+    number:this.number,
+    subject:this.subject
   }),
   headers: {
     'Content-type': 'application/json; charset=UTF-8',

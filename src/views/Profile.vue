@@ -10,20 +10,16 @@
 </div>
 </div>
 
-
+<div class="person">
 <h3>Name : {{ name }}</h3>
 <p>Email : {{email}}</p>
 <p>Number : {{contact}}</p>
 <p>Subject : {{ subject }}</p>
+</div>
 
 
-<!-- get all -->
- <!-- <div  class="student" v-for="student in students" :key="student._id">
-    <h3 class="name">Name : {{student.name}}</h3>
-    <p>Email : {{student.email}}</p>
-    <p>Number : {{student.contact}}</p>
-    <p>Qualification : {{student.subject}}</p>
-  </div> -->
+
+
   </div>
 </template>
 
@@ -43,25 +39,8 @@ return{
   subject:  localStorage.getItem("subject"),
    contact:  localStorage.getItem("contact")
 }
-},
- mounted(){
- 
-      fetch("https://mymentor-server.herokuapp.com/students/", {
-        method: "GET",
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-        },
-      })
-        .then((response) => response.json())
-        .then((json) => {
-          this.students = json
-          
-        })
-        .catch((err) => {
-          alert(err);
-        });
-    },
+}
+
 
 }
 </script>

@@ -37,7 +37,7 @@
           <li>NAME</li>
           <li> <input v-model="name" required type="text"></li>
           <li>NUMBER</li>
-          <li><input v-model="number" required type="number"></li>
+          <li><input v-model="contact" required type="number"></li>
           <li>EMAIL</li>
           <li><input v-model="email" required type="email"></li>
           <li>PASSWORD</li>
@@ -112,6 +112,10 @@ h3,p{
 .student{
   border: 2px solid black;
   margin: 100px;
+}
+
+ul{
+  list-style: none;
 }
 /* media query */
 @media only screen and (max-width: 600px) {

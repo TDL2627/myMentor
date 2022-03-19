@@ -11,10 +11,10 @@
 </div>
 
 
-<h2>Name : {{ name }}</h2>
-<p>Email :{{email}}</p>
-<p>Number :{{contact}}</p>
-<p>Subject :{{ subject }}</p>
+<h3>Name : {{ name }}</h3>
+<p>Email : {{email}}</p>
+<p>Number : {{contact}}</p>
+<p>Subject : {{ subject }}</p>
 
 
 <!-- get all -->

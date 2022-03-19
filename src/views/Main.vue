@@ -2,7 +2,7 @@
 <div class="main-ou">
 <Nav/>
 <h1 class="heading">HOME</h1>
- <h2>Welcome {{name}}</h2>
+ <h3>Welcome {{name}}</h3>
 
 <!-- desktop -->
 <div class="container desktop">

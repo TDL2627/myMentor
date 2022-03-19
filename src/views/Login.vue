@@ -55,7 +55,7 @@ try{
                localStorage.setItem("email", user.student.email);
                 localStorage.setItem("contact", user.student.contact);
                localStorage.setItem("subject", user.student.subject);
-               console.log(user.student)
+            
                          this.loading = false
 
           }

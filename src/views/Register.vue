@@ -66,8 +66,13 @@ export default {
   },
 })
   .then((response) => response.json())
-        .then((json) => {
-            localStorage.setItem("jwt", json.jwt);
+        .then((user) => {
+             localStorage.setItem("jwt", user.jwt);
+               localStorage.setItem("id", user.student._id);
+               localStorage.setItem("name", user.student.name);
+               localStorage.setItem("email", user.student.email);
+                localStorage.setItem("contact", user.student.contact);
+               localStorage.setItem("subject", user.student.subject);
           this.loading = false
           this.$router.push({ name: "Main" });
      })

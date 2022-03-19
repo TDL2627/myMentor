@@ -2,7 +2,7 @@
 <div class="main-ou">
 <Nav/>
 <h1 class="heading">HOME</h1>
- <h2>Welcome {{name}}</h2>
+ <h2 class="welcome">Welcome {{name}}</h2>
 
 <!-- desktop -->
 <div class="container desktop">
@@ -110,7 +110,9 @@ export default {
 .mobile{
     display: none;
 }
-
+.welcome{
+    color: white;
+}
 
 
 

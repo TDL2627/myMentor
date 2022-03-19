@@ -50,9 +50,12 @@ try{
         .then((user) => {
           if(user.jwt){
                localStorage.setItem("jwt", user.jwt);
-               localStorage.setItem("student", user.student);
-               const person = user.student
-               console.log(person)
+               localStorage.setItem("id", user.student._id);
+               localStorage.setItem("name", user.student.name);
+               localStorage.setItem("email", user.student.email);
+                localStorage.setItem("contact", user.student.contact);
+               localStorage.setItem("subject", user.student.subject);
+               console.log(user.student)
                          this.loading = false
 
           }

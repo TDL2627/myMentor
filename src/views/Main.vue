@@ -2,7 +2,7 @@
 <div class="main-ou">
 <Nav/>
 <h1 class="heading">HOME</h1>
-
+ <h2>Welcome {{name}}</h2>
 
 <!-- desktop -->
 <div class="container desktop">
@@ -63,6 +63,11 @@
 <script>
 import Nav from "../components/Navbar.vue"
 export default {
+    data(){
+  return{
+ name: localStorage.getItem("name")
+  }
+    },
     components:{
         Nav
     },

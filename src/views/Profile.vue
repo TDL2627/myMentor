@@ -11,14 +11,19 @@
 </div>
 
 
+<h2>Name : {{ name }}</h2>
+<p>Email :{{email}}</p>
+<p>Number :{{contact}}</p>
+<p>Subject :{{ subject }}</p>
+
 
 <!-- get all -->
- <div  class="student" v-for="student in students" :key="student._id">
+ <!-- <div  class="student" v-for="student in students" :key="student._id">
     <h3 class="name">Name : {{student.name}}</h3>
     <p>Email : {{student.email}}</p>
     <p>Number : {{student.contact}}</p>
     <p>Qualification : {{student.subject}}</p>
-  </div>
+  </div> -->
   </div>
 </template>
 
@@ -31,15 +36,16 @@ data(){
 return{
 
   students:null,
-  loading:false
+  loading:false,
+  name: localStorage.getItem("name"),
+  id: localStorage.getItem("id"),
+  email:  localStorage.getItem("email"),
+  subject:  localStorage.getItem("subject"),
+   contact:  localStorage.getItem("contact")
 }
 },
  mounted(){
-    if (!localStorage.getItem("jwt")) {
-        alert("User not logged in");
-        return this.$router.push({ name: "Login" });
-      }
-        
+ 
       fetch("https://mymentor-server.herokuapp.com/students/", {
         method: "GET",
         headers: {

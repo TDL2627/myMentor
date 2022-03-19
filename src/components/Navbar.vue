@@ -12,7 +12,7 @@
     <router-link class="nav-link" to="/shuttle">SHUTTLE</router-link>
     <router-link class="nav-link" to="/times">TIME TABLE</router-link>
     <router-link class="nav-link" to="/feedback">FEED BACK</router-link>
-    <router-link class="nav-link" to="/about">About</router-link>
+    <router-link class="nav-link" to="/about">ABOUT</router-link>
      <router-link class="nav-link info" to="/advice">INFORMATION</router-link>
  <div class="dropdown">    
   <button class="btn droppie btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
@@ -52,7 +52,7 @@ MORE
     <router-link class="nav-link" to="/shuttle">SHUTTLE</router-link>
     <router-link class="nav-link" to="/times">TIME TABLE</router-link>
     <router-link class="nav-link" to="/feedback">FEED BACK</router-link>
-    <router-link class="nav-link" to="/about">About</router-link>
+    <router-link class="nav-link" to="/about">ABOUT</router-link>
      <router-link class="nav-link info" to="/advice">INFORMATION</router-link>
  <div class="dropdown">    
   <button class="btn droppie btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">

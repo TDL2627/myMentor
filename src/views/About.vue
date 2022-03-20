@@ -1,21 +1,16 @@
 <template>
-  <div class="about">
-      <Nav/>
-<h1 class="heading">ABOUT</h1>
-
-  </div>
+  <About/>
 </template>
+
 <script>
-import Nav from "../components/Navbar.vue"
-
+import About from "@/components/About.vue"
 export default {
-  components:{ Nav},
-
+components:{
+  About
+}
 }
 </script>
 
-<style scoped>
-.about{
-    padding-top: 7%;
-}
+<style>
+
 </style>

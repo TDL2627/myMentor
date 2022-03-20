@@ -16,7 +16,7 @@
 <p>Number : {{contact}}</p>
 <p>Subject : {{ subject }}</p>
 
-      <button v-on:click="deleteNote(note._id)" class="btn  btn-danger" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
+      <button v-on:click="deleteMail()" class="btn  btn-danger" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
   <br> <br>
   <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary"><img class="ico" src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"/></button> 
 
@@ -89,7 +89,7 @@ return{
       }
       },
   methods:{
-     
+    //  when student edits profile
   async  editMail(){
     this.loading = true
     try{
@@ -110,6 +110,33 @@ return{
   .then((json) => {
      this.loading = false
     alert("Account edited")
+  });
+    }
+  catch(err)  {
+          alert(err);
+          this.loading = false
+        }
+  },
+  // when student deletes account
+   async  deleteMail(){
+    this.loading = true
+    try{
+ fetch('http://localhost:2627/contact/delete', {
+  method: 'POST',
+  body: JSON.stringify({
+    name: this.name,
+    email:this.email
+    
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
+
+
+  .then((json) => {
+     this.loading = false
+    alert("Account deleted.")
   });
     }
   catch(err)  {

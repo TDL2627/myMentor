@@ -35,13 +35,13 @@
        <form >
         <ul>
           <li>NAME</li>
-          <li> <input v-model="name" required type="text"></li>
+          <li> <input v-model="name"  type="text"></li>
           <li>NUMBER</li>
-          <li><input v-model="contact" required type="number"></li>
+          <li><input v-model="contact"  type="number"></li>
           <li>EMAIL</li>
-          <li><input v-model="email" required type="email"></li>
+          <li><input v-model="email"  type="email"></li>
           <li>PASSWORD</li>
-          <li><input v-model="password" required type="text"></li>
+          <li><input v-model="password"  type="text"></li>
           <li>SUBJECT</li>
           <li><select required v-model="subject" name="subject" id="subject">
   <option value="Nautical Science">Nautical Science</option>
@@ -50,7 +50,7 @@
        </ul>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit"  class="btn btn-success">Save</button>
+          <button type="submit" v-on:click="editMail()"  class="btn btn-success">Save</button>
         </div>
        </form>
       </div>
@@ -81,9 +81,43 @@ return{
   subject:  localStorage.getItem("subject"),
    contact:  localStorage.getItem("contact")
 }
-}
+},
+ mounted(){
+      if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      }
+      },
+  methods:{
+     
+  async  editMail(){
+    this.loading = true
+    try{
+ fetch('http://localhost:2627/contact/edit', {
+  method: 'POST',
+  body: JSON.stringify({
+    name: this.name,
+    email:this.email,
+    number:this.number,
+    subject:this.subject
+  }),
+  headers: {
+    'Content-type': 'application/json; charset=UTF-8',
+  },
+})
 
 
+  .then((json) => {
+     this.loading = false
+    alert("Account edited")
+  });
+    }
+  catch(err)  {
+          alert(err);
+          this.loading = false
+        }
+  }
+  }
 }
 </script>
 

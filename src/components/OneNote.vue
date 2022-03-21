@@ -42,9 +42,9 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
        <form >
         <ul>
           <li>TITLE</li>
-          <li> <input v-model="title" required type="text"></li>
+          <li> <input v-model="title"  type="text"></li>
           <li>BODY</li>
-          <li><textarea v-model="body" required type="text" cols="30" rows="10"></textarea></li>
+          <li><textarea v-model="body"  type="text" cols="30" rows="10"></textarea></li>
        </ul>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -141,7 +141,7 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           alert("Note Updated");
-          this.$router.push({ name: "Notepad" });
+        this.$router.go()
         })
         .catch((err) => {
           alert(err);

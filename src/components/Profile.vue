@@ -41,7 +41,7 @@
           <li>EMAIL</li>
           <li><input v-model="email"  type="email"></li>
           <li>PASSWORD</li>
-          <li><input v-model="password"  type="text"></li>
+          <li><input v-model="password"  type="password"></li>
           <li>SUBJECT</li>
           <li><select required v-model="subject" name="subject" id="subject">
   <option value="Nautical Science">Nautical Science</option>
@@ -50,7 +50,7 @@
        </ul>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" v-on:click="editMail()"  class="btn btn-success">Save</button>
+          <button type="submit" v-on:click="editProfile()"  class="btn btn-success">Save</button>
         </div>
        </form>
       </div>
@@ -79,7 +79,8 @@ return{
   id: localStorage.getItem("id"),
   email:  localStorage.getItem("email"),
   subject:  localStorage.getItem("subject"),
-   contact:  localStorage.getItem("contact")
+   contact:  localStorage.getItem("contact"),
+   password: "",
 }
 },
  mounted(){
@@ -98,7 +99,7 @@ return{
   body: JSON.stringify({
     name: this.name,
     email:this.email,
-    number:this.number,
+    contact:this.contact,
     subject:this.subject
   }),
   headers: {
@@ -165,7 +166,40 @@ return{
         
           }
   },
-  
+   // edit
+     editProfile(){
+      if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      }
+      fetch("https://mymentor-server.herokuapp.com/students/" + this.id, {
+        method: "PUT",
+        body: JSON.stringify({
+          name: this.name,
+    email:this.email,
+    contact:this.contact,
+    subject:this.subject,
+    password:this.password
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          this.$router.go()
+                alert("Profile Updated");
+         
+         this.$router.push({ name: "Home" });
+      
+          localStorage.clear()
+        })
+        .catch((err) => {
+          alert(err);
+        });
+  }
+
   }
 
 }

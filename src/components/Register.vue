@@ -73,6 +73,7 @@ export default {
                localStorage.setItem("email", user.student.email);
                 localStorage.setItem("contact", user.student.contact);
                localStorage.setItem("subject", user.student.subject);
+               localStorage.setItem("password", user.student.password);
           this.loading = false
           this.$router.push({ name: "Main" });
      })

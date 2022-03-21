@@ -16,7 +16,7 @@
 <p>Number : {{contact}}</p>
 <p>Subject : {{ subject }}</p>
 
-      <button v-on:click="deleteMail()" class="btn  btn-danger" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
+      <button v-on:click="deleteProfile()" class="btn  btn-danger" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
   <br> <br>
   <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary"><img class="ico" src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"/></button> 
 
@@ -143,8 +143,29 @@ return{
           alert(err);
           this.loading = false
         }
+  },
+     // delete
+ deleteProfile() {
+      if (localStorage.getItem("jwt")){
+        fetch('https://mymentor-server.herokuapp.com/students/'+ this.id ,{
+          method: 'DELETE',
+          headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+        })
+        
+        .then(res => res.json())
+        .catch(error => console.error('Error:', error))
+   
+        .then(response => console.log('Success:', response));
+        alert("Profile Deleted")
+         this.$router.push({ name: "Home" });
+        
+          }
   }
   }
+
 }
 </script>
 

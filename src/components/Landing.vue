@@ -33,7 +33,9 @@ export default {
 </script>
 <style scoped>
 .home{
+  background:white;
   padding-top:10%;
+  height: 100vh;
 }
 .huge-head{
   font-size: 150px;

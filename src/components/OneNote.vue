@@ -120,10 +120,9 @@ export default {
          this.$router.push({ name: "Notepad" });
         
           }
-    }
-  },
-  // edit
-  editNote(id){
+    },
+    // edit
+     editNote: function(id){
       if (!localStorage.getItem("jwt")) {
         alert("User not logged in");
         return this.$router.push({ name: "Login" });
@@ -148,6 +147,8 @@ export default {
           alert(err);
         });
   }
+  }
+ 
 };
 </script>
 

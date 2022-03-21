@@ -77,7 +77,7 @@ try{
      
         catch(err)  {
            this.$router.push({ name: "Login" });
-
+        
           alert(err);
           this.loading = false
         }

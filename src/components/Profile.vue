@@ -160,10 +160,12 @@ return{
    
         .then(response => console.log('Success:', response));
         alert("Profile Deleted")
+        localStorage.clear()
          this.$router.push({ name: "Home" });
         
           }
-  }
+  },
+  
   }
 
 }

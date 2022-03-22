@@ -1,8 +1,10 @@
 <template>
   <div class="dashboard">
-      <div class="h1">
-          Admin dashboard
-      </div>
+  <h1> Admin dashboard</h1>
+         
+     
+            <button class="outtie" @click="logout()">LOG OUT</button>
+
       <div class="container">
           <div class="row">
               <div class="col-lg-6">
@@ -26,6 +28,14 @@ export default {
             return this.$router.push({ name: "Admin" });
         }
       },
+       methods: {
+      logout() {
+        localStorage.clear()
+        this.$router.push({
+          name: 'Admin'
+        })
+      }
+    }
 
 }
 </script>

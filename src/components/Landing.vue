@@ -1,7 +1,7 @@
 <template>
   <div class="home">
 
-<h1 class="huge-head animate__flipInX">myMentor</h1>
+<h1 class="huge-head animate__animated animate__flipInX">myMentor</h1>
 
 <div class="container desktop">
   <div class="row">
@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import 'animate.css';
+
 
 export default {
 

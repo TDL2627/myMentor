@@ -94,7 +94,7 @@ return{
   async  editMail(){
     this.loading = true
     try{
- fetch('http://localhost:2627/contact/edit', {
+ fetch('https://mymentor-server.herokuapp.com/contact/edit', {
   method: 'POST',
   body: JSON.stringify({
     name: this.name,
@@ -147,7 +147,7 @@ return{
    async  deleteMail(){
     this.loading = true
     try{
- fetch('http://localhost:2627/contact/delete', {
+ fetch('https://mymentor-server.herokuapp.com/contact/delete', {
   method: 'POST',
   body: JSON.stringify({
     name: this.name,

@@ -61,8 +61,6 @@ async created () {
     overflow-y: hidden !important;
     background: rgb(17, 20, 64);
     width: 100%;
-  
-    padding-top: 7%;
     padding-bottom: 7%;
 }
 .name{

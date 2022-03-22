@@ -7,7 +7,8 @@
   <div class="circle circle-2"></div>
 </div>
 </div>
-
+            <button class="outtie" @click="logout()">LOG OUT</button>
+      <router-link to="/admin/dashboard">DASH BOARD</router-link>
  <div class="container">
    <div class="row">
   <div class="col-lg-5  note"  v-for="note in notes" :key="note._id">
@@ -18,7 +19,7 @@
 
    </div>
  </div>
- 
+
   </div>
 </template>
 
@@ -47,11 +48,27 @@ export default {
       this.loading = false
     }
   }
+  ,
+       methods: {
+      logout() {
+        localStorage.clear()
+        this.$router.push({
+          name: 'Admin'
+        })
+      }
+    }
 }
 </script>
 
 <style scoped>
-
+.noteList{
+      padding-top: 7%;
+   height: max-content !important;
+    overflow-y: hidden !important;
+    background: rgb(17, 20, 64);
+    width: 100%;
+    padding-bottom: 7%;
+}
 
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {

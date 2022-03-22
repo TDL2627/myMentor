@@ -6,11 +6,11 @@
       <div class="container">
           <div class="row">
               <div class="col-lg-6">
-                 <!-- <router-link>EVERYONES NOTES</router-link> -->
+                 <router-link to="/dashboard/notelist">EVERYONES NOTES</router-link>
 
               </div>
                <div class="col-lg-6">
-                  <!-- <router-link>EVERYONES PROFILES</router-link> -->
+                  <router-link to="/dashboard/studentlist">EVERYONES PROFILES</router-link>
                   
               </div>
           </div>

@@ -69,8 +69,6 @@ try{
              this.$router.push({ name: "Login" });
             alert("Incorrect Details");
                       this.loading = false
-
-            
           }
         })
 }

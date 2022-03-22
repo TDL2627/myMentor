@@ -79,6 +79,7 @@ data(){
     notes:null,
     title:"",
     body:"",
+    date:"",
     loading:false
   }
 },

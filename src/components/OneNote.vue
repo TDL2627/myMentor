@@ -16,6 +16,7 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
       <div class="note-details">
         <h2>{{ note.title }}</h2>
         <p>{{ note.body }}</p>
+        <p>{{note.date}}</p>
       </div>
       <button v-on:click="deleteNote(note._id)" class="btn  btn-danger" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
 <br> <br>
@@ -27,7 +28,7 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
 
 
 
-
+e
 <!-- Modal for edit note -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -74,6 +75,7 @@ export default {
       note: null,
       title:"",
       body:"",
+      date:"",
       loading:false
     };
   },

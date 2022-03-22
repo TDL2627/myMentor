@@ -8,9 +8,19 @@
   <div class="circle circle-2"></div>
 </div>
 </div>
+<!-- search -->
+
 <a class="addie" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Add a note
 </a>
+
+<div class="dropdown">
+  <button class="dropbtn">SORT BY</button>
+  <div class="dropdown-content">
+<button>Ascending</button>
+<button>Descending</button>
+  </div>
+</div>
 
 <!-- Modal for add  note -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,6 +60,7 @@
 <!-- note -->
 <div class="container">
   <div class="row">
+    <input v-model="search">
 <div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title">
   <div class="buts d-flex">
     <router-link class="notie" :to="{name: 'Note', params: { id: note._id }}"><h3 class="note-head">{{note.title}}</h3></router-link>
@@ -80,7 +91,8 @@ data(){
     title:"",
     body:"",
     date:"",
-    loading:false
+    loading:false,
+    search: null
   }
 },
 // fetching all
@@ -110,6 +122,13 @@ data(){
       this.$router.push({ name: "Login" });
     }
     
+  },
+     computed: {
+    filteredList() {
+      return this.notes.filter(note => {
+        return note.title.toLowerCase().includes(this.search.toLowerCase())
+      })
+    }
   },
    methods: {
      createNote() {
@@ -151,6 +170,7 @@ data(){
 </script>
 
 <style scoped>
+
 .notepad{
   padding-top: 7%;
   padding-bottom: 7%;
@@ -200,7 +220,46 @@ h3{
   color: black;
   text-decoration: underline black;
 }
+/* drop down*/
+.dropbtn {
+  background-color: royalblue;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
 
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content button:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: royalblue;
+}
 /* media query */
 @media only screen and (max-width: 600px) {
 .notepad{

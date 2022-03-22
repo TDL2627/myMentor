@@ -110,8 +110,32 @@ return{
 
   .then((json) => {
      this.loading = false
-    alert("Account edited")
-     editProfile()
+    fetch("https://mymentor-server.herokuapp.com/students/" + this.id, {
+        method: "PUT",
+        body: JSON.stringify({
+          name: this.name,
+    email:this.email,
+    contact:this.contact,
+    subject:this.subject,
+    password:this.password
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          this.$router.go()
+                alert("Profile Updated");
+         
+         this.$router.push({ name: "Home" });
+      
+          localStorage.clear()
+        })
+        .catch((err) => {
+          alert(err);
+        });
   });
     }
   catch(err)  {

@@ -15,11 +15,6 @@
 
   </div>
 </div>
-<!-- mobile -->
-<div class="mobile">
-  <router-link class="mobi-link" to="/login">LOGIN</router-link>
-  <router-link class="mobi-link" to="/register">REGISTER</router-link>
-</div>
 
   </div>
 </template>
@@ -34,7 +29,7 @@ export default {
 </script>
 <style scoped>
 .home{
-  background:white;
+  background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/ocean.jpg");
   padding-top:10%;
   height: 100vh;
   overflow: hidden;
@@ -81,15 +76,8 @@ p:hover{
 .huge-head{
   font-size: 50px;
 }
-.desktop{
-  display: none;
-}
-.mobile{
-  display: initial;
-  position: fixed;
-  bottom: 30%;
-  left: 2%;
-}
+
+
 }
 /* animations */
 .pulsate-bck {

@@ -23,7 +23,7 @@
       </div>
 
       <div class="modal-body">
-       <form >
+       <form @submit.prevent="createNote">
         <ul>
           <li>TITLE</li>
           <li> <input v-model="title" required type="text"></li>
@@ -39,7 +39,7 @@
 </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" v-on:click="createNote" class="btn btn-success">Save changes</button>
+          <button type="submit" class="btn btn-success">Save changes</button>
         </div>
        </form>
       </div>
@@ -140,6 +140,7 @@ data(){
           this.$router.go()
         })
         .catch((err) => {
+          console.log(err)
           alert("It failed.Try again please");
           this.loading = false;
         });

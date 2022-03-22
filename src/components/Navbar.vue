@@ -105,7 +105,7 @@ export default {
   left: 0;
   height: 50px;
   width: 100%;
-  background-color: rgb(63, 72, 204);
+    background-color: rgb(52, 152, 235);
 }
 #menu{
   height: 20px;
@@ -132,12 +132,12 @@ h5{
   padding-left: 20%;
 }
 .nav-link:hover,.dropdown-item:hover{
-  color: cadetblue;
+  color: #03045e;
 text-decoration: underline;
 }
 a.router-link-exact-active {
     font-size:20px;
-color: cadetblue;
+color: #03045e;
 font-weight: bold;
 text-decoration: underline ;
 }
@@ -152,7 +152,7 @@ text-decoration: underline ;
     left: 0;
     height: 50px;
     width: 100%;
-    background-color: rgb(63, 72, 204);
+    background-color: rgb(52, 152, 235);
 }
 .droppie{
   margin-top: 5px;

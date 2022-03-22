@@ -32,13 +32,14 @@ font-family: 'PT Serif', serif;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  background: rgb(17, 20, 64);
+  background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), rgb(17, 20, 64);
+
 }
 h1{
   color: white
 }
 .heading{
-   color: cadetblue;
+   color: rgb(52, 152, 235);
    text-decoration: underline;
 }
 /* width */

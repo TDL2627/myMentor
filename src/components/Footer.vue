@@ -31,7 +31,7 @@ export default {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(63, 72, 204);
+    background: rgb(17, 20, 64);
     color: white;
 }
 .tdl{
@@ -43,7 +43,7 @@ export default {
     .mobile{
         display: initial;
         height: 50px;
-        padding: 10px;
+        padding: 40px;
     }
     .mentor{
     position: fixed;

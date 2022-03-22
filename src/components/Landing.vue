@@ -36,14 +36,19 @@ export default {
 }
 .huge-head{
   font-size: 150px;
-  color: rgb(52, 152, 235);
+  color: white;
 }
 a{
   text-decoration: none;
 }
 p{
+  padding-top: 20px;
+   padding-bottom: 20px;
+     background: rgb(17, 20, 64);
   font-size:20px;
-  border: solid black 2px;
+  border: none;
+  border-radius: 25px;
+    color: white;
 
 }
 p:hover{
@@ -74,9 +79,11 @@ p:hover{
   padding-top:30%;
 }
 .huge-head{
-  font-size: 50px;
+ font-size: 70px;
 }
-
+.row{
+  padding-top:15% ;
+}
 
 }
 /* animations */

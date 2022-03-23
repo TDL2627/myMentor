@@ -6,7 +6,7 @@
   <div class="circle circle-2"></div>
 </div>
 </div>
-  <h1 class="heading">LOGIN</h1>
+  <h1 class="heading animate__slow animate__animated animate__jackInTheBox">LOGIN</h1>
   <form @submit.prevent="login">
       <h3>EMAIL</h3>
 <input class="putting"  v-model="email"  required placeholder="Type here email..." type="email">
@@ -87,6 +87,7 @@ try{
 <style scoped>
 .login{
     padding-top: 7%;
+    overflow: hidden;
 }
 h3{
     color: white;
@@ -97,6 +98,7 @@ p{
 }
 .putting{
     border-radius: 25px;
+    padding-left: 1%;
     height: 50px;
     width: 50%;
      color: rgb(52, 152, 235);
@@ -107,9 +109,11 @@ p{
     border: 2px solid rgb(52, 152, 235);
     color: rgb(52, 152, 235);
     border-radius: 25px;
-    padding-left: 20px;
-    margin: 10px;
-    padding-right: 20px;
+    padding-left: 50px;
+    margin: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 
 /* loader */

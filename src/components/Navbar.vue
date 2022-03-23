@@ -4,29 +4,34 @@
 
  <!-- pc nav -->
    <div class="navi pc">
+      <router-link to="/main"><img class="nav-logo" src="@/assets/mentlogo.png" alt="logo"></router-link> 
     <div class="navg d-flex">
-   <router-link to="/main"><img class="nav-logo" src="@/assets/mentlogo.png" alt="logo"></router-link> 
+  
      <router-link class="nav-link" to="/main">HOME</router-link>
     <router-link class="nav-link" to="/mentors">MENTORS</router-link>
     <router-link class="nav-link" to="/notepad">NOTE PAD</router-link>
-    <router-link class="nav-link" to="/shuttle">SHUTTLE</router-link>
-    <router-link class="nav-link" to="/times">TIME TABLE</router-link>
     <router-link class="nav-link" to="/feedback">FEED BACK</router-link>
     <router-link class="nav-link" to="/about">ABOUT</router-link>
-     <router-link class="nav-link info" to="/advice">INFORMATION</router-link>
+   <router-link class="nav-link"  to="/profile">PROFILE</router-link>
  <div class="dropdown">    
   <button class="btn droppie btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 MORE
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+       <li><router-link class="dropdown-item" to="/shuttle">SHUTTLE</router-link></li> 
+   <li><router-link class="dropdown-item" to="/times">TIME TABLE</router-link></li> 
+         <hr>
+              <router-link class="dropdown-item" to="/advice"><p style="text-align:center;">INFO</p></router-link>
+    
     <li><router-link class="dropdown-item" to="/advice/exam">EXAM PREPERATION</router-link></li>
     <li><router-link class="dropdown-item" to="/advice/study">STUDY GUIDE</router-link></li>
     <li><router-link class="dropdown-item" to="/advice/mental">MENTAL HELP</router-link></li>
     <li><router-link class="dropdown-item" to="/advice/time">TIME MANAGEMENT</router-link></li>
 
+
   </ul>
 </div>
-    <router-link class="nav-link"  to="/profile">PROFILE</router-link>
+ 
     </div>
       <button class="outtie" @click="logout()">LOG OUT</button>
   </div>
@@ -49,24 +54,24 @@ MORE
      <router-link class="nav-link" to="/main">HOME</router-link>
     <router-link class="nav-link" to="/mentors">MENTORS</router-link>
     <router-link class="nav-link" to="/notepad">NOTE PAD</router-link>
-    <router-link class="nav-link" to="/shuttle">SHUTTLE</router-link>
-    <router-link class="nav-link" to="/times">TIME TABLE</router-link>
     <router-link class="nav-link" to="/feedback">FEED BACK</router-link>
     <router-link class="nav-link" to="/about">ABOUT</router-link>
-     <router-link class="nav-link info" to="/advice">INFORMATION</router-link>
+       <router-link class="nav-link"  to="/profile">PROFILE</router-link>
  <div class="dropdown">    
   <button class="btn droppie btn-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
 MORE
   </button>
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+       <li><router-link class="dropdown-item" to="/shuttle">SHUTTLE</router-link></li> 
+   <li><router-link class="dropdown-item" to="/times">TIME TABLE</router-link></li> 
+         <hr>
+              <router-link class="dropdown-item" to="/advice"><p style="text-align:center;">INFO</p></router-link>
     <li><router-link class="dropdown-item" to="/advice/exam">EXAM PREPERATION</router-link></li>
     <li><router-link class="dropdown-item" to="/advice/study">STUDY GUIDE</router-link></li>
     <li><router-link class="dropdown-item" to="/advice/mental">MENTAL HELP</router-link></li>
     <li><router-link class="dropdown-item" to="/advice/time">TIME MANAGEMENT</router-link></li>
-
   </ul>
 </div>
-    <router-link class="nav-link"  to="/profile">PROFILE</router-link>
     <br>
     <br>
     <button class="out" @click="logout()">LOG OUT</button>
@@ -131,7 +136,7 @@ h5{
   color: white;
 }
 .navg{
-  padding-left: 20%;
+  padding-left: 30%;
 }
 .nav-link:hover,.dropdown-item:hover{
   color: rgb(52, 152, 235);

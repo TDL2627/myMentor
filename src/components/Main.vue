@@ -1,11 +1,11 @@
 <template>
 <div class="main-ou">
 <Nav/>
-<h1 class="heading">HOME</h1>
- <h2 class="welcome">Welcome {{name}}</h2>
+<h1 class="heading animate__animated  animate__tada  animate__delay-2s">HOME</h1>
+ <h2 class="welcome animate__animated  animate__fadeInDown animate__delay-3s">Welcome {{name}}</h2>
 
 <!-- desktop -->
-<div class="container desktop">
+<div class="container desktop animate__animated animate__zoomInDown">
     <div class="row">
        <div class="col-lg-4">
                 <router-link class="tabby" to="/mentors">MENTORS</router-link>
@@ -32,23 +32,23 @@
 </div>
 
 <!-- for mobile -->
-<div class="container mobile">
+<div class="container mobile ">
  <div class="row">
-       <div class="col-sm-12">
+       <div class="col-sm-12 animate__animated animate__lightSpeedInRight">
                 <router-link class="tabby" to="/mentors">MENTORS</router-link>
                 <router-link class="tabby" to="/notepad">NOTE PAD</router-link>
        </div>
 </div>
 
 <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12 animate__animated animate__lightSpeedInLeft">
         <router-link class="tabby" to="/times">TIME TABLE</router-link>
          <router-link class="tabby" to="/shuttle">SHUTTLE</router-link>
        </div>
 </div>
 
 <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12 animate__animated animate__lightSpeedInRight">
          <router-link class="tabby" to="/advice">INFORMATION</router-link>
          <router-link class="tabby" to="/feedback">FEED BACK</router-link>
        </div>
@@ -93,7 +93,7 @@ export default {
 .main-ou{
     padding-top: 7%;
         height: max-content !important;
-    overflow-y: hidden !important;
+    overflow: hidden !important;
   background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), rgb(17, 20, 64);
     width: 100%;
 }

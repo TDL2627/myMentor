@@ -69,7 +69,7 @@
   <div class="row">
     <input v-model="search">
     <div v-if="notes && notes.length">
-<div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title">
+<div class="notez col-lg-12 col-sm-12" v-for="note in notes, filterNotes" :key="note.title">
   <div class="buts d-flex">
     <router-link class="notie" :to="{name: 'Note', params: { id: note._id }}"><h3 class="note-head">{{note.title}}</h3></router-link>
 </div>
@@ -134,11 +134,12 @@ data(){
     
   },
      computed: {
-    filteredList() {
-      return this.notes.filter(note => {
-        return note.title.toLowerCase().includes(this.search.toLowerCase())
-      })
-    }
+  
+    filterNotes: function () {
+      return this.notes.filter((note) => {
+        return note.title.toLowerCase().match(this.search.toLowerCase());
+      });
+    },
   },
    methods: {
      createNote() {

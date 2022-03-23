@@ -10,7 +10,7 @@
  <h1 class="heading">Mentors</h1>
  <div class="container">
    <div class="row">
-  <div class="col-lg-5  mentor"  v-for="mentor in mentors" :key="mentor.name">
+  <div class="col-lg-5  mentor animate__animated animate__lightSpeedInLeft"  v-for="mentor in mentors" :key="mentor.name">
      <img class="piks" :src="require('@/assets/'+ mentor.pic)">
     <h3 class="name">{{mentor.name}}</h3>
     <h4>{{mentor.qualification}}</h4>

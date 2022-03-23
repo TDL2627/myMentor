@@ -6,7 +6,7 @@
   <div class="circle circle-2"></div>
 </div>
 </div>
-  <h1 class="heading">REGISTER</h1>
+  <h1 class="heading animate__slow animate__animated animate__jackInTheBox">REGISTER</h1>
   <form  @submit.prevent="register">
  
 <h3>WHAT IS YOUR QUALIFICATION</h3>
@@ -26,7 +26,7 @@
  <h3>PASSWORD</h3>
 <input v-model="password" class="putting" placeholder="Type here..." type="password">
 <br><br>
-      <button class="butt" type="submit">SUBMIT</button>
+      <button class="butt subby" type="submit">SUBMIT</button>
   </form>
   <p>Already registered? <router-link to="/login"> Click here</router-link></p>
 </div>
@@ -92,7 +92,7 @@ export default {
 .register{
     height: max-content !important;
     overflow-y: hidden !important;
-    background: rgb(17, 20, 64);
+  background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), rgb(17, 20, 64);
     width: 100%;
     padding-top: 7%;
     padding-bottom: 5%;
@@ -116,9 +116,11 @@ p{
     border: 2px solid rgb(52, 152, 235);
     color: rgb(52, 152, 235);
     border-radius: 25px;
-    padding-left: 20px;
-    margin: 10px;
-    padding-right: 20px;
+   padding-left: 50px;
+    margin: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
 }
 label{
     color: white;

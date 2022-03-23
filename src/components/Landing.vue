@@ -7,10 +7,10 @@
   <div class="row">
 <div class="col-lg-6 col-md-6">
  
-<router-link  to="/login"><p>LOGIN</p></router-link>
+<router-link  to="/login"><p class="subby">LOGIN</p></router-link>
 </div>
 <div class="col-lg-6 col-md-6">
-  <router-link  to="/register"><p>REGISTER</p></router-link>
+  <router-link  to="/register"><p class="subby">REGISTER</p></router-link>
 </div>
 
   </div>
@@ -51,11 +51,7 @@ p{
     color: white;
 
 }
-p:hover{
-  animation-name: pulsate-bck;
-  animation-iteration-count: infinite;
-  animation-duration: 0.5s;
-}
+
 .container{
   padding-top: 10%;
 }

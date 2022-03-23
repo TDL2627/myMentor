@@ -13,7 +13,7 @@
  <h3>PASSWORD</h3>
 <input class="putting"    v-model="password" required placeholder="Type here  password..." type="password">
 <br><br>
-      <button class="butt" type="submit">SUBMIT</button>
+      <button class="butt subby" type="submit">SUBMIT</button>
   </form>
   <p>Not registered? <router-link to="/register"> Click here</router-link></p>
 </div>

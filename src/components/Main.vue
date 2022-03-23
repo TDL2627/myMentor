@@ -1,8 +1,8 @@
 <template>
 <div class="main-ou">
 <Nav/>
-<h1 class="heading animate__animated  animate__tada  animate__delay-2s">HOME</h1>
- <h2 class="welcome animate__animated  animate__fadeInDown animate__delay-3s">Welcome {{name}}</h2>
+<h1 class="heading animate__animated  animate__tada  animate__delay-1s">HOME</h1>
+ <h2 class="welcome animate__animated  animate__fadeInDown animate__delay-2s">Welcome {{name}}</h2>
 
 <!-- desktop -->
 <div class="container desktop animate__animated animate__zoomInDown">
@@ -14,7 +14,7 @@
                 <router-link  to="/notepad"><p class="tabby">NOTE PAD</p></router-link>
        </div>
         <div class="col-lg-4">
-               <router-link  to="/times"><p class="tabby">TIME TABLE</p> </router-link>
+               <router-link  to="/about"><p class="tabby">ABOUT</p> </router-link>
        </div>
     </div>
 
@@ -33,24 +33,20 @@
 
 <!-- for mobile -->
 <div class="container mobile ">
- <div class="row">
+ <div class="row d-flex">
        <div class="col-sm-12 animate__animated animate__lightSpeedInRight">
-                <router-link class="tabby" to="/mentors">MENTORS</router-link>
-                <router-link class="tabby" to="/notepad">NOTE PAD</router-link>
-       </div>
-</div>
+                <router-link  to="/mentors"> <p class="tabby">MENTORS</p></router-link>
+                <router-link  to="/notepad"> <p class="tabby">NOTEPAD</p></router-link>
+       </div>  
 
-<div class="row">
         <div class="col-sm-12 animate__animated animate__lightSpeedInLeft">
-        <router-link class="tabby" to="/times">TIME TABLE</router-link>
-         <router-link class="tabby" to="/shuttle">SHUTTLE</router-link>
+                <router-link  to="/about"> <p class="tabby">ABOUT</p></router-link>
+                <router-link  to="/shuttle"> <p class="tabby">SHUTTLE</p></router-link>
        </div>
-</div>
 
-<div class="row">
         <div class="col-sm-12 animate__animated animate__lightSpeedInRight">
-         <router-link class="tabby" to="/advice">INFORMATION</router-link>
-         <router-link class="tabby" to="/feedback">FEED BACK</router-link>
+                <router-link  to="/advice"> <p class="tabby">INFORMATION</p></router-link>
+                <router-link  to="/feedback"> <p class="tabby">FEED BACK</p></router-link>
        </div>
 </div>
     
@@ -123,6 +119,7 @@ a{
 @media only screen and (max-width: 600px) {
 .main-ou{
     padding-top: 20%;
+    padding-bottom:20%;
 }
 .desktop{
     display: none;
@@ -138,9 +135,9 @@ a{
 .row{
     margin: 0px;
 }
-.col-sm-12{
+/* .col-sm-12{
     margin-bottom: 100px;
-}
+} */
 .heading{
     margin-bottom: 15%;
 }

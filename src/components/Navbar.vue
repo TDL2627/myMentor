@@ -111,6 +111,7 @@ export default {
   height: 50px;
   width: 100%;
  background: rgb(17, 20, 64);
+    z-index: 99999;
 
 }
 #menu{

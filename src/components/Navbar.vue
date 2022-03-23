@@ -157,6 +157,7 @@ text-decoration: underline ;
       position: fixed;
     top: 0;
     left: 0;
+    z-index: 99999;
     height: 50px;
     width: 100%;
       background: rgb(17, 20, 64);

@@ -8,25 +8,25 @@
 <div class="container desktop animate__animated animate__zoomInDown">
     <div class="row">
        <div class="col-lg-4">
-                <router-link class="tabby" to="/mentors">MENTORS</router-link>
+                <router-link  to="/mentors"> <p class="tabby">MENTORS</p></router-link>
        </div>
         <div class="col-lg-4">
-                <router-link class="tabby" to="/notepad">NOTE PAD</router-link>
+                <router-link  to="/notepad"><p class="tabby">NOTE PAD</p></router-link>
        </div>
         <div class="col-lg-4">
-               <router-link class="tabby" to="/times">TIME TABLE</router-link>
+               <router-link  to="/times"><p class="tabby">TIME TABLE</p> </router-link>
        </div>
     </div>
 
     <div class="row">
          <div class="col-lg-4">
-                <router-link class="tabby" to="/shuttle">SHUTTLE</router-link>
+                <router-link  to="/shuttle"><p class="tabby">SHUTTLE</p></router-link>
        </div>
         <div class="col-lg-4">
-                <router-link class="tabby" to="/advice">INFORMATION</router-link>
+                <router-link  to="/advice"><p class="tabby">INFORMATION</p></router-link>
        </div>
         <div class="col-lg-4">
-                <router-link class="tabby" to="/feedback">FEED BACK</router-link>
+                <router-link  to="/feedback"><p class="tabby">FEED BACK</p></router-link>
        </div>
     </div>
 </div>
@@ -105,10 +105,13 @@ export default {
     border: solid 5px  rgb(52, 152, 235);
 }
 .row{
-    margin: 150px;
+    margin: 50px;
 }
 .mobile{
     display: none;
+}
+a{
+    text-decoration:none;
 }
 .welcome{
     color: white;

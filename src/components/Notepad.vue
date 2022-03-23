@@ -14,13 +14,7 @@
   Add a note
 </a>
 
-<!-- <div class="dropdown">
-  <button class="dropbtn">SORT BY</button>
-  <div class="dropdown-content">
-<button>Ascending</button>
-<button>Descending</button>
-  </div>
-</div> -->
+
  <label>
           Sort by title:
           <select v-model="title" @change="sortTitle(title)">
@@ -69,7 +63,7 @@
   <div class="row">
     <input v-model="search">
     <div v-if="notes && notes.length">
-<div class="notez col-lg-12 col-sm-12" v-for="note in notes, filterNotes" :key="note.title">
+<div class="notez col-lg-12 col-sm-12" v-for="note of filterNotes" :key="note.title">
   <div class="buts d-flex">
     <router-link class="notie" :to="{name: 'Note', params: { id: note._id }}"><h3 class="note-head">{{note.title}}</h3></router-link>
 </div>

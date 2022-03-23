@@ -63,7 +63,9 @@
   <div class="row">
     <input v-model="search">
     <div v-if="notes && notes.length">
-<div class="notez col-lg-12 col-sm-12" v-for="note of filterNotes" :key="note.title">
+<!-- <div class="notez col-lg-12 col-sm-12" v-for="note of filterNotes" :key="note.title"> -->
+  <div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title">
+
   <div class="buts d-flex">
     <router-link class="notie" :to="{name: 'Note', params: { id: note._id }}"><h3 class="note-head">{{note.title}}</h3></router-link>
 </div>
@@ -194,7 +196,7 @@ data(){
   padding-bottom: 7%;
    height: max-content !important;
     overflow-y: hidden !important;
-    background: rgb(17, 20, 64);
+  background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), rgb(17, 20, 64);
 }
 
 .ico{
@@ -210,7 +212,6 @@ data(){
 }
 .notez{
   border: 2px solid black;
-  width: 40%;
   margin: 5%;
   background: white;
   padding: 1%;

@@ -59,7 +59,7 @@ async created () {
   padding-top: 7%;
    height: max-content !important;
     overflow-y: hidden !important;
-    background: rgb(17, 20, 64);
+  background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), rgb(17, 20, 64);
     width: 100%;
     padding-bottom: 7%;
 }
@@ -67,7 +67,7 @@ async created () {
       margin: 25px;
 }
 .mentor{
-    border: solid 2px black;
+        border: solid 1px rgb(52, 152, 235);
    padding: 20px;
    margin: 4%;
 }

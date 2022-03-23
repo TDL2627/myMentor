@@ -73,7 +73,7 @@ p{
 .exam{
  height: max-content !important;
     overflow-y: hidden !important;
-    background: rgb(17, 20, 64);
+  background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), rgb(17, 20, 64);
   padding-top: 7%;
   padding-bottom: 7%;
 }

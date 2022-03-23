@@ -100,6 +100,11 @@ export default {
     padding: 50px;
     border: solid 5px  rgb(52, 152, 235);
 }
+.tabby:hover{
+    color:black;
+    border: solid 5px black;
+    background: rgb(52, 152, 235);
+}
 .row{
     margin: 50px;
 }

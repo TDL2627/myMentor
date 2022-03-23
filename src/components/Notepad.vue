@@ -14,13 +14,20 @@
   Add a note
 </a>
 
-<div class="dropdown">
+<!-- <div class="dropdown">
   <button class="dropbtn">SORT BY</button>
   <div class="dropdown-content">
 <button>Ascending</button>
 <button>Descending</button>
   </div>
-</div>
+</div> -->
+ <label>
+          Sort by title:
+          <select v-model="title" @change="sortTitle(title)">
+            <option value="asc">Ascending</option>
+            <option value="desc">Descending</option>
+          </select>
+        </label>
 
 <!-- Modal for add  note -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -61,14 +68,14 @@
 <div class="container">
   <div class="row">
     <input v-model="search">
-    <!-- <div v-if="notes != null "> -->
+    <div v-if="notes && notes.length">
 <div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title">
   <div class="buts d-flex">
     <router-link class="notie" :to="{name: 'Note', params: { id: note._id }}"><h3 class="note-head">{{note.title}}</h3></router-link>
 </div>
  </div>
- <!-- </div> -->
-<!-- <div v-else-if="notes === null">You havent created any notes</div> -->
+ </div> 
+<div v-else>You havent created any notes</div>
 
 
 
@@ -166,7 +173,20 @@ data(){
           alert("It failed.Try again please");
           this.loading = false;
         });
-    }
+    },
+   
+    sortTitle(title) {
+      this.notes = this.notes.sort((a, b) => {
+        if (a.title.toLowerCase() < b.title.toLowerCase()) {
+          return -1;
+        }
+        if (a.title.toLowerCase() > b.title.toLowerCase()) {
+          return 1;
+        }
+        return 0;
+      });
+      if (title == "desc") this.notes.reverse();
+    },
    }
   
 }

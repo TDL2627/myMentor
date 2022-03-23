@@ -1,6 +1,6 @@
 <template>
   <div class="students">
-      <h1>ALL STUDENTS</h1>
+      <h1 class="heading animate__animated animate__fadeInDown">ALL STUDENTS</h1>
 
   <div v-if="loading" >
  <div class="half-circle-spinner">

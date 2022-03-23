@@ -1,7 +1,7 @@
 <template>
 <div class="advice">
 <Nav/>
-<h1 class="heading">GENERAL INFORMATION</h1>
+<h1 class="heading animate__animated animate__fadeInDown">GENERAL INFORMATION</h1>
 
 <div class="container desktop">
   <div class="row">

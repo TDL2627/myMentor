@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
     <Nav/>
-      <h1 class="heading">Profile</h1>
+      <h1 class="heading animate__animated animate__fadeInDown">Profile</h1>
 
           <div v-if="loading" >
  <div class="half-circle-spinner">

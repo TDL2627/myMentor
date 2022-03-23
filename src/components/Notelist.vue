@@ -1,6 +1,6 @@
 <template>
   <div class="noteList">
-      <h1>NOTE LIST</h1>
+      <h1 class="heading animate__animated animate__fadeInDown">NOTE LIST</h1>
    <div v-if="loading" >
  <div class="half-circle-spinner">
   <div class="circle circle-1"></div>

@@ -1,6 +1,6 @@
 <template>
   <div class="admin">
-      <h1>Welcome Admin</h1>
+      <h1 class="heading animate__animated animate__fadeInDown">Welcome Admin</h1>
         <div v-if="loading" >
  <div class="half-circle-spinner">
   <div class="circle circle-1"></div>

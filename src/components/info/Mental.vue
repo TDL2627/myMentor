@@ -1,7 +1,7 @@
 <template>
   <div class="mental">
        <Nav/>
-<h1 class="heading">MENTAL HELP</h1>
+<h1 class="heading animate__animated animate__fadeInDown">MENTAL HELP</h1>
 <router-link to="/advice" class="backie"><svg  xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 width="50" height="50"
 viewBox="0 0 172 172"

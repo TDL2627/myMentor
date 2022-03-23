@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard">
-  <h1> Admin dashboard</h1>
+  <h1 class="heading animate__animated animate__fadeInDown"> Admin dashboard</h1>
          
      
             <button class="outtie" @click="logout()">LOG OUT</button>

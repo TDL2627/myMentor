@@ -7,7 +7,7 @@
   <div class="circle circle-2"></div>
 </div>
 </div>
-  <h1 class="heading">Feed Back</h1>
+  <h1 class="heading animate__animated animate__fadeInDown">Feed Back</h1>
 
   <br><br>
 <form @submit.prevent="feedBack">
@@ -38,7 +38,7 @@
 <h3>Is there anything you'd like to ask or say?</h3>
 <textarea  v-model="say" name="say" id="say" cols="50" rows="1" required></textarea>
 <br><br>
-      <button class="butt" type="submit">SUBMIT</button>
+      <button class="subby butt" type="submit">SUBMIT</button>
 </form>
 
 </div>

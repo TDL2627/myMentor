@@ -7,7 +7,7 @@
 </div>
 </div>
 
- <h1 class="heading">Mentors</h1>
+ <h1 class="heading animate__animated animate__fadeInDown">Mentors</h1>
  <div class="container">
    <div class="row">
   <div class="col-lg-5  mentor animate__animated animate__lightSpeedInLeft"  v-for="mentor in mentors" :key="mentor.name">

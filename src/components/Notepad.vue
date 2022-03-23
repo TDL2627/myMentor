@@ -1,14 +1,14 @@
 <template>
 <div class="notepad">
   <Nav/>
-<h1 class="heading">Note Pad</h1>
+<h1 class="heading animate__animated animate__fadeInDown">Note Pad</h1>
    <div v-if="loading" >
  <div class="half-circle-spinner">
   <div class="circle circle-1"></div>
   <div class="circle circle-2"></div>
 </div>
 </div>
-<!-- search -->
+
 
 <a class="addie" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Add a note
@@ -63,8 +63,8 @@
   <div class="row">
     <input v-model="search">
     <div v-if="notes && notes.length">
-<!-- <div class="notez col-lg-12 col-sm-12" v-for="note of filterNotes" :key="note.title"> -->
-  <div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title">
+<div class="notez col-lg-12 col-sm-12" v-for="note of filterNotes" :key="note.title">
+  <!-- <div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title"> -->
 
   <div class="buts d-flex">
     <router-link class="notie" :to="{name: 'Note', params: { id: note._id }}"><h3 class="note-head">{{note.title}}</h3></router-link>
@@ -93,7 +93,7 @@ components:{
 },
 data(){
   return{
-    notes:null,
+    notes:[],
     title:"",
     body:"",
     date:"",
@@ -132,9 +132,12 @@ data(){
      computed: {
   
     filterNotes: function () {
-      return this.notes.filter((note) => {
+      if (this.notes != '' && this.notes){
+ return this.notes.filter((note) => {
         return note.title.toLowerCase().match(this.search.toLowerCase());
       });
+      }
+     
     },
   },
    methods: {

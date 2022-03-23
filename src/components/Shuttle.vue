@@ -1,7 +1,7 @@
 <template>
 <div class="shuttles">
   <Nav/>
-<h1 class="heading">SHUTTLE TIMES</h1>
+<h1 class="heading animate__animated animate__fadeInDown">SHUTTLE TIMES</h1>
 <div v-if="loading" >
  <div class="half-circle-spinner">
   <div class="circle circle-1"></div>

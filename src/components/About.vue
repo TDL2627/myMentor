@@ -1,7 +1,7 @@
 <template>
   <div class="about">
       <Nav/>
-<h1 class="heading">ABOUT</h1>
+<h1 class="heading animate__animated animate__fadeInDown">ABOUT</h1>
 <h3>WHAT IS THIS APP ABOUT?</h3>
 <p>A web based assistance application that is a PWA so it can be installed on mobile devices since students are are mostly on their phones than pc/laptop. This application targets first year university students to help them transition easier into the university environment.</p>
   </div>

@@ -1,7 +1,7 @@
 <template>
 <div class="times">
   <Nav/>
-  <h1 class="heading">TIME TABLE</h1>
+  <h1 class="heading animate__animated animate__fadeInDown">TIME TABLE</h1>
   <img src="@/assets/0.png" class="img-fluid" alt="img">
     <img src="@/assets/0.png" class="img-mob" alt="img">
 </div>

@@ -61,16 +61,19 @@
 <div class="container">
   <div class="row">
     <input v-model="search">
+    <!-- <div v-if="notes != null "> -->
 <div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title">
   <div class="buts d-flex">
     <router-link class="notie" :to="{name: 'Note', params: { id: note._id }}"><h3 class="note-head">{{note.title}}</h3></router-link>
 </div>
+ </div>
+ <!-- </div> -->
+<!-- <div v-else-if="notes === null">You havent created any notes</div> -->
 
 
 
 
 
-</div>
   </div>
 </div>
 

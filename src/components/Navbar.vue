@@ -105,7 +105,8 @@ export default {
   left: 0;
   height: 50px;
   width: 100%;
-    background-color: rgb(52, 152, 235);
+ background: rgb(17, 20, 64);
+
 }
 #menu{
   height: 20px;
@@ -119,7 +120,8 @@ export default {
 }
 .offcanvas{
   width: 70% !important;
-    background: rgb(17, 20, 64);
+  background: rgb(17, 20, 64);
+
 
 }
 h5{
@@ -132,12 +134,12 @@ h5{
   padding-left: 20%;
 }
 .nav-link:hover,.dropdown-item:hover{
-  color: #03045e;
+  color: rgb(52, 152, 235);
 text-decoration: underline;
 }
 a.router-link-exact-active {
     font-size:20px;
-color: #03045e;
+ color: rgb(52, 152, 235);
 font-weight: bold;
 text-decoration: underline ;
 }
@@ -152,7 +154,8 @@ text-decoration: underline ;
     left: 0;
     height: 50px;
     width: 100%;
-    background-color: rgb(52, 152, 235);
+      background: rgb(17, 20, 64);
+
 }
 .droppie{
   margin-top: 5px;

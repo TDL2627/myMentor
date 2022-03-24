@@ -14,7 +14,8 @@
   Add a note
 </a>
 
-<div class="filterz">
+<div class="filterz ">
+
    <label>
 Sort by title :
 </label>
@@ -22,7 +23,7 @@ Sort by title :
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>
-        
+
         <!-- search -->
         <label>Search :</label>
         <input v-model="search" id="searchie" placeholder="Type the title here ...">
@@ -67,12 +68,11 @@ Sort by title :
 </div>
 
 <!-- notes -->
-<div class="container">
+<div class="container allNotes">
   <div class="row">
     <div v-if="notes && notes.length">
 <!-- <div class="notez col-lg-12 col-sm-12" v-for="note of filterNotes" :key="note.title"> -->
   <div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title">
-
   <div class="buts d-flex">
     <router-link class="notie" :to="{name: 'Note', params: { id: note._id }}"><h3 class="note-head">{{note.title}}</h3></router-link>
 </div>
@@ -255,6 +255,11 @@ h2{
  background: black;
   padding:10px;
 }
+.addie:hover{
+  border: 2px solid royalblue;
+ background: royalblue;
+ color: white;
+}
 .filterz{
   margin-bottom:2%;
    margin-top:2%;
@@ -313,7 +318,7 @@ h3{
    padding-bottom:25% ;
 }
 .notez{
-  width: 90% !important;
+  width: 100% !important;
 }
 .note-body{
   overflow-y: scroll;
@@ -322,13 +327,21 @@ h3{
 .ico{
   height: 20px;
 }
-.notie{
-  padding-left: 50px;
-  padding-right: 50px;
+
+
+select{
+  width:80%;
+  margin-right:0;
 }
-.note-head{
-  width:150px;
-  overflow: hidden;
+#searchie{
+  width:80%;
+}
+label{
+  width:100%;
+}
+.filterz{
+  margin-top:10%;
+  margin-bottom:10%;
 }
 }
 /* loader */

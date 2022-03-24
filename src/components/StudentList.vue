@@ -74,6 +74,22 @@ export default {
     width: 100%;
     padding-bottom: 7%;
 }
+.outtie{
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    text-decoration: none;
+    color: red;
+    background: white;
+    border: solid red 2px;
+    border-radius: 25px;
+    padding: 5px;
+}
+.person{
+    border: solid 2px whitesmoke;
+  color: white;
+  margin: 20px;
+}
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {
       box-sizing: border-box;

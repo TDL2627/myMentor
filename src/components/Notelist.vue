@@ -69,7 +69,23 @@ export default {
     width: 100%;
     padding-bottom: 7%;
 }
+.note{
+  border: solid 2px whitesmoke;
+  color: white;
+  margin: 20px;
 
+}
+.outtie{
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    text-decoration: none;
+    color: red;
+    background: white;
+    border: solid red 2px;
+    border-radius: 25px;
+    padding: 5px;
+}
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {
       box-sizing: border-box;

@@ -94,6 +94,32 @@ try{
 </script>
 
 <style scoped>
+h3{
+    color: white;
+    margin: 20px;
+}
+p{
+    color: white;
+}
+.putting{
+    border-radius: 25px;
+    padding-left: 1%;
+    height: 50px;
+    width: 50%;
+     color: rgb(52, 152, 235);
+     border: solid 1px rgb(52, 152, 235);
+}
+.butt{
+    background: transparent;
+    border: 2px solid rgb(52, 152, 235);
+    color: rgb(52, 152, 235);
+    border-radius: 25px;
+    padding-left: 50px;
+    margin: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
 /* loader */
 
 .half-circle-spinner, .half-circle-spinner * {

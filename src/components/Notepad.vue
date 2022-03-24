@@ -14,14 +14,21 @@
   Add a note
 </a>
 
-
- <label>
-          Sort by title:
+<div class="filterz">
+   <label>
+Sort by title :
+</label>
           <select v-model="title" @change="sortTitle(title)">
             <option value="asc">Ascending</option>
             <option value="desc">Descending</option>
           </select>
-        </label>
+        
+        <!-- search -->
+        <label>Search :</label>
+        <input v-model="search" id="searchie" placeholder="Type the title here ...">
+</div>
+
+          
 
 <!-- Modal for add  note -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -58,20 +65,20 @@
     </div>
   </div>
 </div>
-<!-- note -->
+
+<!-- notes -->
 <div class="container">
   <div class="row">
-    <input v-model="search">
     <div v-if="notes && notes.length">
-<div class="notez col-lg-12 col-sm-12" v-for="note of filterNotes" :key="note.title">
-  <!-- <div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title"> -->
+<!-- <div class="notez col-lg-12 col-sm-12" v-for="note of filterNotes" :key="note.title"> -->
+  <div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title">
 
   <div class="buts d-flex">
     <router-link class="notie" :to="{name: 'Note', params: { id: note._id }}"><h3 class="note-head">{{note.title}}</h3></router-link>
 </div>
  </div>
  </div> 
-<div v-else>You havent created any notes</div>
+<div v-else><h2> You havent created any notes</h2></div>
 
 
 
@@ -206,16 +213,16 @@ data(){
   height: 20px;
 }
 .notie{
-  padding-left: 160px;
-  padding-right: 140px;
+width:100%;
 }
 .note-head{
-  width:150px;
+  width:100%;
   overflow: hidden;
 }
 .notez{
   border: 2px solid black;
-  margin: 5%;
+  margin-top:20px;
+ margin-bottom:20px;
   background: white;
   padding: 1%;
   height: 50px;
@@ -228,6 +235,16 @@ p{
   text-align: start !important;
 
 }
+#searchie{
+  width: 40%;
+}
+label{
+  color:white;
+  margin-right:1%;
+}
+h2{
+  color:white;
+}
 .addie{
   position: fixed;
   right:20px;
@@ -237,6 +254,13 @@ p{
   border-radius: 25px;
  background: black;
   padding:10px;
+}
+.filterz{
+  margin-bottom:2%;
+   margin-top:2%;
+}
+select{
+  margin-right:10%;
 }
 h3{
   color: black;

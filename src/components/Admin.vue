@@ -58,20 +58,26 @@ try{
             localStorage.setItem("password", user.student.password);
             localStorage.setItem("role", user.student.role);
                          this.loading = false
-
           }
-      
-          if(localStorage.getItem("jwt")){
-            this.$router.push({ name: "Dashboard" });
+           if(localStorage.getItem("role"))
+          {
+             alert("Welcome Admin")
                       this.loading = false
-
           }
           else{
              this.$router.push({ name: "Admin" });
+            alert("Not Admin");
+                      this.loading = false
+          }
+           if(localStorage.getItem("jwt"))
+          {
+                       this.$router.push({ name: "Dashboard" });
+                      this.loading = false
+          }
+            else{
+             this.$router.push({ name: "Admin" });
             alert("Incorrect Details");
                       this.loading = false
-
-            
           }
         })
 }

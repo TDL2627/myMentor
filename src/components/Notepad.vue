@@ -203,7 +203,7 @@ data(){
   padding-top: 7%;
   padding-bottom: 7%;
    height: max-content !important;
-    overflow-y: hidden !important;
+    overflow: hidden !important;
   background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), rgb(17, 20, 64);
 }
 

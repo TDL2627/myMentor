@@ -253,7 +253,9 @@ h3,p{
   border: 2px solid black;
   margin: 100px;
 }
-
+.modal{
+  z-index: 999999999999999999999999999999999999999999999999999999999999999;
+}
 ul{
   list-style: none;
 }

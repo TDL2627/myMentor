@@ -14,14 +14,16 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
   <div v-if="note">
     <div class="note">
       <div class="note-details">
-        <h2>{{ note.title }}</h2>
-        <p>{{ note.body }}</p>
+        <h2 class="noteHead">{{ note.title }}</h2>
+        <p class="noteBody">{{ note.body }}</p>
         <p>{{note.date}}</p>
       </div>
-      <button v-on:click="deleteNote(note._id)" class="btn  btn-danger" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
-<br> <br>
-<button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary"> <img class="ico" src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"/>
+      <div class="butz">
+ <button v-on:click="deleteNote(note._id)" class="btn  btn-danger but" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
+<button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary but"> <img class="ico" src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"/>
  </button>
+      </div>
+     
 
     </div>
   </div>
@@ -40,7 +42,7 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
       </div>
 
       <div class="modal-body">
-       <form >
+       <form @submit.prevent="editNote(note._id)">
         <ul>
           <li>TITLE</li>
           <li> <input v-model="title"  type="text"></li>
@@ -49,7 +51,7 @@ style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-w
        </ul>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" v-on:click="editNote(note._id)" class="btn btn-success">Save changes</button>
+          <button type="submit"  class="btn btn-success">Save changes</button>
         </div>
        </form>
       </div>
@@ -124,7 +126,8 @@ export default {
           }
     },
     // edit
-     editNote: function(id){
+     editNote(id){
+           this.loading = true
       if (!localStorage.getItem("jwt")) {
         alert("User not logged in");
         return this.$router.push({ name: "Login" });
@@ -143,10 +146,12 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           alert("Note Updated");
+          this.loading = false
         this.$router.go()
         })
         .catch((err) => {
           alert(err);
+          this.loading = false
         });
   }
   }
@@ -162,14 +167,33 @@ export default {
     border: 2px solid black;
     background: white;
     width: 80%;
-    margin:10%;
+    margin-left:10%;
     padding: 2%;
 }
 h2{
+  color:black;
     text-decoration: underline;
 }
 ul{
   list-style: none;
+}
+.backie{
+  position: fixed;
+  top:10%;
+  right: 5%;
+}
+.ico{
+  height: 50px;
+}
+.but{
+  margin:20px;
+}
+.noteBody{
+  height:200px;
+  overflow-y: scroll;
+}
+.modal{
+  z-index: 999999999999999999999999999999999999999999999999999999999999999;
 }
 /* loader */
 

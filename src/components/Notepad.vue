@@ -82,8 +82,6 @@ Sort by title :
 
 
 
-
-
   </div>
 </div>
 
@@ -212,6 +210,10 @@ data(){
 .ico{
   height: 20px;
 }
+.modal{
+  z-index: 999999999999999999999999999999999999999999999999999999999999999;
+}
+
 .notie{
 width:100%;
 }
@@ -280,7 +282,6 @@ h3{
   border: none;
   cursor: pointer;
 }
-
 .dropdown {
   position: relative;
   display: inline-block;

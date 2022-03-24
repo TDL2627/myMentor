@@ -47,6 +47,7 @@ h1{
   animation-iteration-count: infinite;
   animation-duration: 0.5s;
 }
+
 /* width */
 ::-webkit-scrollbar {
   width: 15px;

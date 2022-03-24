@@ -33,10 +33,10 @@
 </select>
 <br> <br>
 <h3>Have you been having any issues? (Academic or Personal)</h3>
-<textarea v-model="issue" name="issues" id="issue" cols="50" required rows="1"></textarea>
+<textarea v-model="issue" name="issues" id="issue" cols="50" required rows="5"></textarea>
 <br><br>
 <h3>Is there anything you'd like to ask or say?</h3>
-<textarea  v-model="say" name="say" id="say" cols="50" rows="1" required></textarea>
+<textarea  v-model="say" name="say" id="say" cols="50" rows="5" required></textarea>
 <br><br>
       <button class="subby butt" type="submit">SUBMIT</button>
 </form>
@@ -164,7 +164,10 @@ h3{
 @media only screen and (max-width: 600px) {
 .feedback{
   padding-top: 20%;
-  padding-bottom: 20%;
+  padding-bottom: 25%;
+}
+textarea{
+  width: 90%;
 }
 }
 /* loader */

@@ -195,6 +195,12 @@ ul{
 .modal{
   z-index: 999999999999999999999999999999999999999999999999999999999999999;
 }
+/* media query */
+@media only screen  and (max-width:700px){
+  .oneNote{
+    padding-top:30%;
+}
+}
 /* loader */
 
 .half-circle-spinner, .half-circle-spinner * {

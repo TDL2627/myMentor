@@ -16,10 +16,10 @@
 <p>Number : {{contact}}</p>
 <p>Subject : {{ subject }}</p>
 
-      <button v-on:click="deleteMail()" class="btn  btn-danger" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
-  <br> <br>
-  <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary"><img class="ico" src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"/></button> 
-
+<div class="buts">
+      <button v-on:click="deleteMail()" class="btn  btn-danger but" ><img class="ico" src="https://img.icons8.com/external-kosonicon-solid-kosonicon/48/000000/external-bin-cleaning-kosonicon-solid-kosonicon.png"/></button>
+  <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary but"><img class="ico" src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png"/></button> 
+</div>
 </div>
 <!-- Modal for edit profile -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -32,7 +32,7 @@
       </div>
 
       <div class="modal-body">
-       <form >
+       <form @submit.prevent="editMail()">
         <ul>
           <li>NAME</li>
           <li> <input v-model="name"  type="text"></li>
@@ -50,7 +50,7 @@
        </ul>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="submit" v-on:click="editMail()"  class="btn btn-success">Save</button>
+          <button type="submit"  class="btn btn-success">Save</button>
         </div>
        </form>
       </div>
@@ -109,7 +109,6 @@ return{
 
 
   .then((json) => {
-     this.loading = false
     fetch("https://mymentor-server.herokuapp.com/students/" + this.id, {
         method: "PUT",
         body: JSON.stringify({
@@ -245,13 +244,22 @@ h3,p{
 .person{
   border: 5px groove white;
   width: 80%;
-  padding: 5%;
+  padding: 2%;
+  padding-left: 30%;
   align-self: center;
+  margin-top: 5%;
   margin-left:10%;
+  text-align: start;
 }
 .student{
   border: 2px solid black;
   margin: 100px;
+}
+.ico{
+  height: 50px;
+}
+.but{
+  margin:20px;
 }
 .modal{
   z-index: 999999999999999999999999999999999999999999999999999999999999999;
@@ -265,6 +273,14 @@ ul{
   padding-top: 20%;
    padding-bottom: 20%;
 }
+.but{
+  margin:10px;
+}
+.person{
+    padding: 10%;
+  padding-left: 5%;
+}
+
 }
 /* loader */
 .half-circle-spinner, .half-circle-spinner * {

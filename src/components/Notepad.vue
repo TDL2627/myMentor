@@ -78,7 +78,7 @@ Sort by title :
 </div>
  </div>
  </div> 
-<div v-else><h2> You havent created any notes</h2></div>
+<div v-else><h2> You did not create any notes yet.</h2></div>
 
 
 

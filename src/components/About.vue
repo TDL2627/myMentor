@@ -4,7 +4,9 @@
 <h1 class="heading animate__animated animate__fadeInDown">ABOUT</h1>
 <div class="content">
 <h3>WHAT IS THIS APP ABOUT?</h3>
-<p>This is a first year university student assistance application which is a PWA so it can be installed on mobile devices since students are are mostly on their phones than pc/laptop.This app helps the students transition easier into the university environment.</p>
+<p>This is a first year university student assistance application which is a PWA so it can be installed on mobile devices since students are are mostly on their phones than pc/laptop.This app helps the students transition easier into the university environment.
+  This app is currently soley focused on one field which is Nautical Science.
+</p>
  <br><br>
  <h3>THE FEATURES</h3>
  <br>

@@ -70,8 +70,13 @@ export default {
     padding-bottom: 7%;
 }
 .note{
-  border: solid 2px whitesmoke;
-  color: white;
+ background: rgba( 255, 255, 255, 0.55 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+  color: black;
   margin: 20px;
 
 }

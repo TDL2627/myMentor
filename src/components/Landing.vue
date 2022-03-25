@@ -30,6 +30,7 @@ export default {
 <style scoped>
 .home{
   background:linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assets/ocean.jpg");
+  background-position: center;
   padding-top:10%;
   height: 100vh;
   overflow: hidden;

@@ -164,8 +164,12 @@ export default {
     padding-top:7%;
 }
 .note{
-    border: 2px solid black;
-    background: white;
+background: rgba( 255, 255, 255, 0.55 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
     width: 80%;
     margin-left:10%;
     padding: 2%;
@@ -191,6 +195,7 @@ ul{
 .noteBody{
   height:200px;
   overflow-y: scroll;
+  color: black;
 }
 .modal{
   z-index: 999999999999999999999999999999999999999999999999999999999999999;

@@ -71,8 +71,8 @@ Sort by title :
 <div class="container allNotes">
   <div class="row">
     <div v-if="notes && notes.length">
-<!-- <div class="notez col-lg-12 col-sm-12" v-for="note of filterNotes" :key="note.title"> -->
-  <div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title">
+<div class="notez col-lg-12 col-sm-12" v-for="note of filterNotes" :key="note.title">
+  <!-- <div class="notez col-lg-12 col-sm-12" v-for="note in notes" :key="note.title"> -->
   <div class="buts d-flex">
     <router-link class="notie" :to="{name: 'Note', params: { id: note._id }}"><h3 class="note-head">{{note.title}}</h3></router-link>
 </div>
@@ -103,7 +103,7 @@ data(){
     body:"",
     date:"",
     loading:false,
-    search: null
+    search: ""
   }
 },
 // fetching all

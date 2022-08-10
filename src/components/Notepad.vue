@@ -259,7 +259,7 @@ h2{
   text-decoration: none;
   border-radius: 25px;
  background: black;
- z-index: 987898789876789876;
+ z-index: 96;
   padding:10px;
 }
 .addie:hover{

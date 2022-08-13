@@ -14,7 +14,7 @@
      <img class="piks" :src="require('@/assets/mentors/'+ mentor.pic)">
     <h3 class="name">{{mentor.name}}</h3>
     <h4>{{mentor.qualification}}</h4>
-    <p>{{mentor.email}}</p>
+
      <div class="div" v-html="mentor.number"></div>
   </div>
 

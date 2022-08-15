@@ -11,7 +11,10 @@
  <div class="container">
    <div class="row">
   <div class="col-lg-5  mentor animate__animated animate__lightSpeedInLeft"  v-for="mentor in mentors" :key="mentor.name">
-     <img class="piks" :src="require('@/assets/mentors/'+ mentor.pic)">
+
+           <img class="piks" :src="require('@/assets/mentors/'+ mentor.pic)">
+
+
     <h3 class="name">{{mentor.name}}</h3>
     <h4>{{mentor.qualification}}</h4>
 
@@ -77,12 +80,15 @@ border: 1px solid rgba( 255, 255, 255, 0.18 );
    margin: 4%;
 }
 img{
-    height: 100px;
-    margin: 20px;
+    height: 150px;
+    width: 40%;
+    border-radius: 50%;
+
 }
 h3,p,h4{
     color: white;
 }
+
 @media only screen and (max-width: 600px) {
   .mentors{
     padding-top:20% ;
@@ -92,7 +98,13 @@ h3,p,h4{
   .mentor{
     width: 80%;
    margin-left:10%;
+   margin-left:10%;
   }
+  img{
+    height: 150px;
+    width: 90%;
+    border-radius: 50%;
+}
 }
 
 /* loader */

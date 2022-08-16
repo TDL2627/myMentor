@@ -1,5 +1,5 @@
 <template>
-  <div class="mentors area">
+  <div class="mentors">
     <ul class="circles">
       <li></li>
       <li></li>
@@ -69,7 +69,6 @@ export default {
 
 <style scoped>
 .mentors {
-  background-image: url("@/assets/exam1.jpg");
   padding-top: 7%;
   height: max-content !important;
   overflow-y: hidden !important;
@@ -92,7 +91,8 @@ export default {
   margin: 4%;
 }
 img {
-  height: 150px;
+  object-fit: cover;
+  height: 200px;
   width: 40%;
   border-radius: 50%;
 }
@@ -223,7 +223,7 @@ h4 {
     margin-left: 10%;
   }
   img {
-    height: 150px;
+    height: 200px;
     width: 90%;
     border-radius: 50%;
   }
